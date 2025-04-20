@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "../css/Navbar.css";
 
 function Navbar() {
   return (
@@ -18,7 +19,10 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div
+          className="collapse navbar-collapse justify-content-end me-5"
+          id="navbarNavDropdown"
+        >
           <ul className="navbar-nav nav-underline">
             <li className="nav-item">
               <NavLink className="nav-link" to="/" end>
@@ -45,7 +49,7 @@ function Navbar() {
               >
                 UserName
               </a>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu me-3">
                 <li>
                   <a className="dropdown-item" href="#">
                     Cerrar Sesión

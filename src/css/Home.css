@@ -1,0 +1,9 @@
+.container-Home {
+  background-image: url("/img/Fondo-maquinas.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

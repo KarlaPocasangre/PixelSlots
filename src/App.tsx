@@ -1,20 +1,58 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import "./App.css";
 import Home from "./pages/Home";
 import Game from "./pages/Game";
 import Ranking from "./pages/Ranking";
-import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/ranking" element={<Ranking />} />
+        <Route
+          path="/login"
+          element={
+            <AuthLayout>
+              <Login />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/logout"
+          element={
+            <AuthLayout>
+              <Logout />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <Home />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/game"
+          element={
+            <MainLayout>
+              <Game />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/ranking"
+          element={
+            <MainLayout>
+              <Ranking />
+            </MainLayout>
+          }
+        />
       </Routes>
-      <Footer />
     </Router>
   );
 }
