@@ -8,7 +8,7 @@ import "../css/Home.css";
 function Home() {
   return (
     <div
-      className="home d-flex justify-content-center align-items-center w-100"
+      className="fondo d-flex justify-content-center align-items-center w-100"
       style={{ backgroundImage: `url(${fondo})` }}
     >
       <div className="container-main  text-center">

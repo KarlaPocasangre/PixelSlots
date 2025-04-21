@@ -1,4 +1,4 @@
-.home {
+.fondo {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,13 +13,13 @@
 .container-main {
   background: rgba(255, 255, 255, 0.8);
   padding: 1%;
-  border-radius: 10px;
-  width: 80%;
+  border-radius: 5px;
+  width: 88%;
   max-width: 470px;
   margin: auto;
   margin-bottom: 1%;
   margin-top: 1%;
-  box-shadow: 0 6px 10px #211827;
+  box-shadow: 0 5px 10px #211827;
 }
 
 .Bienvenida {
@@ -33,7 +33,7 @@
   color: #261248;
   padding: 10px 20px;
   border-radius: 15px;
-  margin: 5px;
+  margin: 2%;
 }
 
 .container-main .btn:hover {

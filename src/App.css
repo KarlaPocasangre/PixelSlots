@@ -22,8 +22,9 @@ html {
 footer {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 20px;
+  color: #b4abc7;
+  background-color: #15032d;
 }
-
 ::-webkit-scrollbar {
   width: 0px;
 }

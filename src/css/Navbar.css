@@ -1,1 +1,74 @@
+.custom-navbar {
+  background-color: #190730;
+}
 
+.custom-toggler {
+  background: none;
+  border: none;
+  color: #ffffff;
+}
+
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.icono-perfil {
+  color: #ffffff;
+}
+
+.icono-perfil:hover {
+  color: #f7c100;
+}
+.icono-perfil:focus {
+  color: #ffffff;
+}
+.icono-perfil[aria-expanded="true"] i {
+  color: #ffffff;
+}
+
+.user {
+  width: 64px;
+  height: 50px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+.divider {
+  height: 1px;
+  background-color: #8c888f;
+  margin: 10px 0;
+}
+
+.user-dropdown .dropdown-toggle {
+  background: none;
+  border: none;
+}
+
+.user-menu {
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+}
+
+.user-name {
+  font-weight: lighter;
+  color: #6d6371;
+  text-align: center;
+  font-size: large;
+}
+
+.logout-btn {
+  color: #2d223f;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #8093f5;
+  color: white;
+}
