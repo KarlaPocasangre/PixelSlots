@@ -1,8 +1,10 @@
+import fondodegradado from "../assets/img/Fondo-degradado.png";
 function Game() {
   return (
-    <div>
-      <h1>Game</h1>
-    </div>
+    <div
+      className="home d-flex justify-content-center align-items-center w-100"
+      style={{ backgroundImage: `url(${fondodegradado})` }}
+    ></div>
   );
 }
 

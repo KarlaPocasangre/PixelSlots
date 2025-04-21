@@ -7,9 +7,9 @@ interface Props {
 
 function MainLayout({ children }: Props) {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100 ">
       <Navbar />
-      <main className="flex-grow-1 ">{children}</main>
+      <main className="flex-grow-1 d-flex">{children}</main>
       <Footer />
     </div>
   );

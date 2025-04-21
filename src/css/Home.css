@@ -1,9 +1,64 @@
-.container-Home {
-  background-image: url("/img/Fondo-maquinas.png");
+.home {
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  width: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+}
+
+.container-main {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1%;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 470px;
+  margin: auto;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  box-shadow: 0 6px 10px #211827;
+}
+
+.Bienvenida {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+.container-main .btn {
+  background-color: #f7c100;
+  border: none;
+  color: #261248;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.container-main .btn:hover {
+  background-color: #8093f5;
+}
+.text-home {
+  color: #261248;
+  font-size: large;
+  letter-spacing: normal;
+  padding: 5px;
+  text-align: justify;
+}
+.logohome {
+  max-width: 80%;
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+.emojigafas {
+  max-width: 80%;
+  width: 90px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
 }

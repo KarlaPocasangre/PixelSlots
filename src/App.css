@@ -10,13 +10,18 @@
   --bs-body-font-family: "PixelifySans", sans-serif;
 }
 
-body {
+body,
+html {
   font-family: "PixelifySans", sans-serif;
   letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 footer {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 20px;
 }
 
 ::-webkit-scrollbar {
