@@ -4,8 +4,8 @@ interface Props {
 
 function AuthLayout({ children }: Props) {
   return (
-    <div className="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-      <main>{children}</main>
+    <div className="d-flex flex-column min-vh-100 justify-content-center align-items-center bg-dark">
+      <main className="w-100 d-flex flex-grow-1">{children}</main>
     </div>
   );
 }
