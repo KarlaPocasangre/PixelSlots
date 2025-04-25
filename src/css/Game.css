@@ -1,0 +1,71 @@
+.contenedor-maqu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .img-maqui {
+    width: 95%;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .img-maqui{
+    width: 970px;
+    height: auto;
+  }
+  .img-MaquinaGrande{
+    width: 535px;
+    height: auto;
+  }
+  .img-Palanca{
+    width: 9%;
+    margin-top:335px;
+    margin-right: 200px;
+  }  
+.rectangulo {
+  position: absolute;
+  top: 100px;
+  left: 950px;
+  display: flex;
+  align-items: center;
+  background-color: #170234E0;
+  border: 2px solid #ffffffaa;
+  border-radius: 8px;
+  padding: 10px 30px;
+  margin: 10px;
+  width: fit-content;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 8px #00000044;
+}
+
+.rectangulo1 {
+  position: absolute;
+  top: 160px;
+  left: 950px;
+  display: flex;
+  align-items: center;
+  background-color: #170234E0;
+  border: 2px solid #ffffffaa;
+  border-radius: 8px;
+  padding: 10px 30px;
+  margin: 10px;
+  width: fit-content;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 8px #00000044;
+}
+
+.icono {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.valor {
+  color: gold;
+  margin-left: 5px;
+}
