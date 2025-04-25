@@ -1,15 +1,14 @@
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-function MainLayout({ children }: Props) {
+function MainLayout() {
   return (
-    <div className="d-flex flex-column min-vh-100 ">
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <main className="flex-grow-1 d-flex">{children}</main>
+      <main className="flex-grow-1 d-flex">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

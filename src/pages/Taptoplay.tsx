@@ -22,9 +22,9 @@ function Taptoplay() {
       style={{ backgroundImage: `url(${fondocalle})` }}
     >
       <div className="contenedor-texto">
-        <h1 className="pixel-title">START</h1>
-        <p className="pixel-subtitle">GAME</p>
-        <p className="pixel-p blink">Presione para continuar</p>
+        <h1 className="pixel-title blink">START</h1>
+        <p className="pixel-subtitle blink">GAME</p>
+        <p className="pixel-p ">Presione para continuar</p>
       </div>
     </div>
   );
