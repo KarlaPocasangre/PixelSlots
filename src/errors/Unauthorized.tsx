@@ -1,6 +1,7 @@
 import "../css/Errors.css";
 import errorimg from "../assets/img/Personaje-blanco.png";
 
+/* Error 401 - El usuario no tiene permisos para acceder */
 function Unauthorized() {
   return (
     <div className="container-errors d-flex flex-column justify-content-center align-items-center text-center min-vh-100 py-5">
@@ -20,7 +21,7 @@ function Unauthorized() {
               ERROR 401
             </h1>
             <h2 className="fs-3 text-light">
-              Ups!... No autorizado ¿Ya iniciaste sesión?
+              Oooops... Acceso No Autorizado...
             </h2>
           </div>
         </div>

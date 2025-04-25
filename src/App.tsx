@@ -7,11 +7,11 @@ import Login from "./pages/Login";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Logout from "./pages/Logout";
+import Loading from "./errors/Loading";
 import NotFound from "./errors/NotFound";
 import Unauthorized from "./errors/Unauthorized";
 import InternalServerError from "./errors/InternalServerError";
 import ServiceUnavailable from "./errors/ServiceUnavailable";
-import Taptoplay from "./pages/Taptoplay";
 
 function App() {
   return (
@@ -58,18 +58,42 @@ function App() {
           }
         />
         <Route
-          path="/notfound"
+          path="/loading"
           element={
             <AuthLayout>
-              <NotFound />
+              <Loading />
             </AuthLayout>
           }
         />
         <Route
-          path="/unauthorized"
+          path="/badgateway"
           element={
             <AuthLayout>
-              <Unauthorized />
+              <BadGateway />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/badrequest"
+          element={
+            <AuthLayout>
+              <BadRequest />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/forbidden"
+          element={
+            <AuthLayout>
+              <Forbidden />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/gatewaytimeout"
+          element={
+            <AuthLayout>
+              <GatewayTimeout />
             </AuthLayout>
           }
         />
@@ -82,18 +106,18 @@ function App() {
           }
         />
         <Route
-          path="/serviceunavailable"
+          path="/notfound"
           element={
             <AuthLayout>
-              <ServiceUnavailable />
+              <NotFound />
             </AuthLayout>
           }
         />
         <Route
-          path="/taptoplay"
+          path="/serviceunavailable"
           element={
             <AuthLayout>
-              <Taptoplay />
+              <ServiceUnavailable />
             </AuthLayout>
           }
         />

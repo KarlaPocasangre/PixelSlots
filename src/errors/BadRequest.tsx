@@ -1,8 +1,8 @@
 import "../css/Errors.css";
 import errorimg from "../assets/img/Personaje-blanco.png";
 
-/* Error 503 - El servidor esta ocupado */
-function ServiceUnavailable() {
+/* Error 400 - el servidor no pudo entender la solicitud que hizo el cliente*/
+function BadRequest() {
   return (
     <div className="container-errors d-flex flex-column justify-content-center align-items-center text-center min-vh-100 py-5">
       <div className="container-fluid">
@@ -10,18 +10,18 @@ function ServiceUnavailable() {
           <div className="col-10 col-sm-8 col-md-6 col-lg-5">
             <img
               src={errorimg}
-              alt="Error 401"
+              alt="Error 404"
               className="img-fluid mb-4 errorimg"
             />
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <h1 className="display-1  text-danger  text-light title-error">
-              ERROR 503
+            <h1 className="display-1  text-danger text-light title-error">
+              ERROR 400
             </h1>
             <h2 className="fs-3 text-light">
-              Oooops... Servicio No Disponible...
+                Oooops... Solicitud incorrecta...
             </h2>
           </div>
         </div>
@@ -30,4 +30,4 @@ function ServiceUnavailable() {
   );
 }
 
-export default ServiceUnavailable;
+export default BadRequest;
