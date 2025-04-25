@@ -1,6 +1,7 @@
 import "../css/Errors.css";
 import errorimg from "../assets/img/Personaje-blanco.png";
 
+/* Error 404 - la pagina no funciona*/
 function NotFound() {
   return (
     <div className="container-errors d-flex flex-column justify-content-center align-items-center text-center min-vh-100 py-5">
@@ -20,7 +21,7 @@ function NotFound() {
               ERROR 404
             </h1>
             <h2 className="fs-3 text-light">
-              Oooops... Pagina no encontrada...
+              Oooops... Pagina No Encontrada...
             </h2>
           </div>
         </div>

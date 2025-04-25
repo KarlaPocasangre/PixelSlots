@@ -1,0 +1,29 @@
+.container-loading {
+    background-color: #0d0c2c;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .full-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-img {
+    width: 30vw;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2rem; 
+  }
+
+
+  
+  .hearts-img {
+    width: 25vw;
+    max-width: 250px;
+    height: auto;
+  }
+  

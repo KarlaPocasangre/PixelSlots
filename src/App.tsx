@@ -7,10 +7,15 @@ import Login from "./pages/Login";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Logout from "./pages/Logout";
+import Loading from "./errors/Loading";
 import NotFound from "./errors/NotFound";
 import Unauthorized from "./errors/Unauthorized";
 import InternalServerError from "./errors/InternalServerError";
 import ServiceUnavailable from "./errors/ServiceUnavailable";
+import BadRequest from "./errors/BadRequest";
+import Forbidden from "./errors/Forbidden";
+import BadGateway from "./errors/BadGateway";
+import GatewayTimeout from "./errors/GatewayTimeout";
 
 function App() {
   return (
@@ -57,18 +62,42 @@ function App() {
           }
         />
         <Route
-          path="/notfound"
+          path="/loading"
           element={
             <AuthLayout>
-              <NotFound />
+              <Loading />
+            </AuthLayout>
+          }
+        />
+         <Route
+          path="/BadGateway"
+          element={
+            <AuthLayout>
+              <BadGateway />
             </AuthLayout>
           }
         />
         <Route
-          path="/unauthorized"
+          path="/BadRequest"
           element={
             <AuthLayout>
-              <Unauthorized />
+              <BadRequest />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/Forbidden"
+          element={
+            <AuthLayout>
+              <Forbidden />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/GatewayTimeout"
+          element={
+            <AuthLayout>
+              <GatewayTimeout />
             </AuthLayout>
           }
         />
@@ -81,10 +110,26 @@ function App() {
           }
         />
         <Route
+          path="/notfound"
+          element={
+            <AuthLayout>
+              <NotFound />
+            </AuthLayout>
+          }
+        />
+        <Route
           path="/serviceunavailable"
           element={
             <AuthLayout>
               <ServiceUnavailable />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/unauthorized"
+          element={
+            <AuthLayout>
+              <Unauthorized />
             </AuthLayout>
           }
         />

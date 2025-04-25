@@ -1,6 +1,7 @@
 import "../css/Errors.css";
 import errorimg from "../assets/img/Personaje-blanco.png";
 
+/* Error 500 - Fallo grave en el servidor */
 function InternalServerError() {
   return (
     <div className="container-errors d-flex flex-column justify-content-center align-items-center text-center min-vh-100 py-5">
@@ -19,7 +20,9 @@ function InternalServerError() {
             <h1 className="display-1  text-danger text-light title-error">
               ERROR 500
             </h1>
-            <h2 className="fs-3 text-light">Oh no!...Internal Server Error</h2>
+            <h2 className="fs-3 text-light">
+              Oooops... Error Interno del Servidor.
+              </h2>
           </div>
         </div>
       </div>
