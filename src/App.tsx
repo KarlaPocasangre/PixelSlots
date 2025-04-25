@@ -69,8 +69,8 @@ function App() {
             </AuthLayout>
           }
         />
-         <Route
-          path="/BadGateway"
+        <Route
+          path="/badgateway"
           element={
             <AuthLayout>
               <BadGateway />
@@ -78,7 +78,7 @@ function App() {
           }
         />
         <Route
-          path="/BadRequest"
+          path="/badrequest"
           element={
             <AuthLayout>
               <BadRequest />
@@ -86,7 +86,7 @@ function App() {
           }
         />
         <Route
-          path="/Forbidden"
+          path="/forbidden"
           element={
             <AuthLayout>
               <Forbidden />
@@ -94,7 +94,7 @@ function App() {
           }
         />
         <Route
-          path="/GatewayTimeout"
+          path="/gatewaytimeout"
           element={
             <AuthLayout>
               <GatewayTimeout />
