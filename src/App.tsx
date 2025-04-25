@@ -11,6 +11,7 @@ import NotFound from "./errors/NotFound";
 import Unauthorized from "./errors/Unauthorized";
 import InternalServerError from "./errors/InternalServerError";
 import ServiceUnavailable from "./errors/ServiceUnavailable";
+import TouchPlay from "./pages/TouchPlay";
 
 function App() {
   return (
@@ -85,6 +86,14 @@ function App() {
           element={
             <AuthLayout>
               <ServiceUnavailable />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/touchplay"
+          element={
+            <AuthLayout>
+              <TouchPlay />
             </AuthLayout>
           }
         />
