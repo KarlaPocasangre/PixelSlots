@@ -19,6 +19,19 @@ html {
   height: 100%;
 }
 
+.swal2-popup {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+a {
+  color: #9b59b6;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #eccb38;
+}
+
 footer {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 20px;

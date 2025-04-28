@@ -1,8 +1,9 @@
-function Footer() {
-  const handleTermsClick = () => {
-    alert("Ejemplo de alerta UwU 🎮✨");
-  };
+import { showTermsAlert } from "../utils/alerts";
+import { showAboutUsAlert } from "../utils/alerts";
+import { showCreditsAlert } from "../utils/alerts";
+import { showcontactAlert } from "../utils/alerts";
 
+function Footer() {
   return (
     <footer className="  py-1 mt-auto">
       <div className="container text-center">
@@ -11,28 +12,28 @@ function Footer() {
         </p>
         <div>
           <span
-            onClick={handleTermsClick}
+            onClick={showTermsAlert}
             className=" me-3"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Terminos
           </span>
           <span
-            onClick={handleTermsClick}
+            onClick={showCreditsAlert}
             className=" me-3"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Atribuciones
           </span>
           <span
-            onClick={handleTermsClick}
+            onClick={showcontactAlert}
             className=" me-3"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Contacto
           </span>
           <span
-            onClick={handleTermsClick}
+            onClick={showAboutUsAlert}
             className=" me-3"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >

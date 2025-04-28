@@ -11,7 +11,7 @@ import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import Taptoplay from "../pages/Taptoplay";
 
-import Loading from "../errors/Loading";
+import Loading from "../pages/Loading";
 import NotFound from "../errors/NotFound";
 import Unauthorized from "../errors/Unauthorized";
 import InternalServerError from "../errors/InternalServerError";
