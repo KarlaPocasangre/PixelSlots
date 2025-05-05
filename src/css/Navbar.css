@@ -26,17 +26,9 @@
   color: #ffffff;
 }
 
-.user {
-  width: 64px;
-  height: 50px;
-  object-fit: cover;
-  margin: 0 auto;
-  display: block;
-}
-
 .divider {
   height: 1px;
-  background-color: #8c888f;
+  background-color: #cdc7d2;
   margin: 10px 0;
 }
 
@@ -47,9 +39,9 @@
 
 .user-menu {
   width: 200px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255);
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: white;
   text-align: center;
@@ -59,16 +51,15 @@
   font-weight: lighter;
   color: #6d6371;
   text-align: center;
-  font-size: large;
 }
 
 .logout-btn {
-  color: #2d223f;
-  border-radius: 5px;
+  color: #6d6371;
+  border-radius: 3px;
   transition: background-color 0.3s ease;
 }
 
 .logout-btn:hover {
-  background-color: #8093f5;
-  color: white;
+  background-color: #dadaf2;
+  color: #554f5b;
 }

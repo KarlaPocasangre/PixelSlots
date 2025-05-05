@@ -1,5 +1,58 @@
 import Swal from "sweetalert2";
 import logoUSO from "../assets/img/LogoUsoPixel.png";
+import tutorial from "../assets/img/Maquina.png";
+
+export const showTutorialAlert = () => {
+  Swal.fire({
+    title: "Tutorial del Juego",
+    html: `
+      <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
+
+        <b>¿Cómo jugar?</b><br><br>
+        <div style="margin-left: 10px;">
+          1. Presiona la palanca para hacer girar las figuras.<br>
+          2. Cada giro consume <b style="color:#9f4abd;">1 intento</b>.<br>
+          3. Solo tienes <b style="color:#9f4abd;">5 intentos por partida</b>.<br><br>
+        </div>
+        <div style="text-align:center; margin-bottom: 15px;">
+          <img src="${tutorial}" alt="Máquina de juego" style="max-width: 50%; height: auto; " />
+        </div>
+
+        <b>Puntaje</b><br><br>
+        Para ganar puntos se debe tener en cuenta lo siguiente:<br>
+        <ul>
+          <li>3 figuras iguales = <b style="color:#9f4abd;">500 puntos + 150 adicionales</b></li>
+          <li>2 figuras iguales = <b style="color:#9f4abd;">200 puntos + 50 adicionales</b></li>
+          <li>3 figuras diferentes = <b style="color:#9f4abd;">0 puntos</b></li>
+        </ul><br>
+
+        <b>¿Cómo se determina el ganador?</b><br><br>
+        <div style="margin-left: 10px;">
+          1. Mayor <b style="color:#9f4abd;">puntaje total</b>.<br>
+        </div><br>
+
+        <div style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
+          ¡Mucha suerte!
+        </div>
+      </div>
+    `,
+    width: "600px",
+    confirmButtonText: "¡Entendido!",
+    showClass: {
+      popup: `
+        animate__animated
+        animate__bounceIn
+      `,
+    },
+    hideClass: {
+      popup: `
+        animate__animated
+        animate__zoomOut
+      `,
+    },
+    scrollbarPadding: false,
+  });
+};
 
 export const showTermsAlert = () => {
   Swal.fire({

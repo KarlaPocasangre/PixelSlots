@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import fondo from "../assets/img/Fondo-maquinas.png";
 import logohome from "../assets/img/logo-prueba.png";
 import emojigafas from "../assets/img/emoji-gafas-de-sol.png";
+import { showTutorialAlert } from "../utils/alerts";
 
 import "../css/Home.css";
 
@@ -25,7 +26,9 @@ function Home() {
           <Link className="btn btn-primary" to="/game" role="button">
             🎮 JUGAR AHORA
           </Link>
-          <button className="btn btn-primary">📖 VER TUTORIAL</button>
+          <button onClick={showTutorialAlert} className="btn btn-primary">
+            📖 VER TUTORIAL
+          </button>
         </div>
       </div>
     </div>
