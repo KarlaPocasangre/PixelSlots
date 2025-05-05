@@ -42,3 +42,15 @@ footer {
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+.puntos-alert-small {
+  width: 300px !important;
+}
+
+.puntos-title-small {
+  font-size: 1rem !important;
+}
+
+.puntos-text-small {
+  font-size: 1rem !important;
+}

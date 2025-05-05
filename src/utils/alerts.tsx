@@ -1,6 +1,28 @@
 import Swal from "sweetalert2";
 import logoUSO from "../assets/img/LogoUsoPixel.png";
 import tutorial from "../assets/img/Maquina.png";
+import ficha from "../assets/img/Moneda.gif";
+import EmojiGafas from "../assets/img/gafas-de-sol.png";
+import EmojiFiesta from "../assets/img/fiesta.png";
+import EmojiImpactado from "../assets/img/conmocionado.png";
+import EmojiEstrellado from "../assets/img/estrellado.png";
+
+export const showMustLoginAlert = () => {
+  Swal.fire({
+    icon: "info",
+    title: "¡Espera un momento!",
+    text: "Debes iniciar sesión para jugar y guardar tu progreso.",
+    confirmButtonText: "Iniciar sesión",
+    showClass: {
+      popup: "animate__animated animate__bounceIn",
+    },
+    hideClass: {
+      popup: "animate__animated animate__zoomOut",
+    },
+  });
+};
+
+//Alerta de tutorial HOME
 
 export const showTutorialAlert = () => {
   Swal.fire({
@@ -41,18 +63,22 @@ export const showTutorialAlert = () => {
     showClass: {
       popup: `
         animate__animated
-        animate__bounceIn
+        animate__fadeInUp
+        animate__faster
       `,
     },
     hideClass: {
       popup: `
         animate__animated
-        animate__zoomOut
+        animate__fadeOutDown
+        animate__faster
       `,
     },
     scrollbarPadding: false,
   });
 };
+
+//Alertas de Terminos y condiciones, sobre nosotros, contacto y atribuciones
 
 export const showTermsAlert = () => {
   Swal.fire({
@@ -205,7 +231,7 @@ export const showCreditsAlert = () => {
         <a href="https://www.flaticon.es/iconos-gratis/pixel" target="_blank" title="Pixel iconos">Pixel iconos creados por j8chi - Flaticon</a><br>
         <a href="https://www.flaticon.es/iconos-gratis/emojis" target="_blank" title="Emojis iconos">Emojis iconos creados por YardenG - Flaticon</a><br>
         <a href="https://www.flaticon.es/iconos-gratis/gritar" title="gritar iconos">Gritar iconos creados por YardenG - Flaticon</a><br><br>
-        Imagenes usadas de <a href="http://www.freepik.es/">Freepik</a>: <br>
+       Imagenes usadas de <a href="http://www.freepik.es/">Freepik</a>: <br>
         <a href="https://www.freepik.es/vector-gratis/diseno-patron-pixeles-degradados_66233431.htm#fromView=keyword&page=1&position=1&uuid=d1628a1a-76db-4c5d-aa3d-fd5da0a7be4c&query=Fondo+Consolas+Retro" target="_blank" title="Fondo Consolas Retro">Símbolos de juego utilizados en el slot Pixel Slots 2025</a><br>
 
         <br><b>🎬Otros Recursos:</b><br>
@@ -238,3 +264,172 @@ export const showCreditsAlert = () => {
     scrollbarPadding: false,
   });
 };
+
+//Alertas de fichas ganadas GAME
+
+export const showGameAlert = () => {
+  Swal.fire({
+    title: "+5 FICHAS",
+    text: " Felicidades!, el equipo de Pixel Slots te ha regalado 5 fichas 🤩🫶",
+    imageUrl: ficha,
+    imageWidth: 200,
+    imageHeight: 200,
+    imageAlt: "Fichas de juego",
+    showClass: {
+      popup: `
+        animate__animated
+        animate__bounceIn
+      `,
+    },
+    hideClass: {
+      popup: `
+        animate__animated
+        animate__zoomOut
+      `,
+    },
+    scrollbarPadding: false,
+  });
+};
+
+//Alertas de puntos ganados GAME
+
+export const showPuntos200Alert = () => {
+  Swal.fire({
+    position: "top-end",
+    imageUrl: EmojiGafas,
+    imageWidth: 100,
+    imageHeight: 100,
+    title: "¡2 Iguales! ¡La suerte te sonríe!",
+    text: "Ganaste: 200 pts + 50 pts adicionales",
+    showConfirmButton: false,
+    timer: 3000,
+    backdrop: false,
+    customClass: {
+      popup: "puntos-alert-small animate__animated",
+      title: "puntos-title-small",
+      htmlContainer: "puntos-text-small",
+    },
+    showClass: {
+      popup: "animate__animated animate__bounceInRight",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+};
+
+export const showPuntos500Alert = () => {
+  Swal.fire({
+    position: "top-end",
+    imageUrl: EmojiFiesta,
+    imageWidth: 100,
+    imageHeight: 100,
+    title: "¡3 Iguales! Disfruta de la fiesta!",
+    text: "Ganaste: 500 pts + 150 pts adicionales",
+    showConfirmButton: false,
+    timer: 4000,
+    backdrop: false,
+    customClass: {
+      popup: "puntos-alert-small animate__animated",
+      title: "puntos-title-small",
+      htmlContainer: "puntos-text-small",
+    },
+    showClass: {
+      popup: "animate__animated animate__bounceInRight",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+};
+
+export const showPuntos0Alert = () => {
+  Swal.fire({
+    position: "top-end",
+    imageUrl: EmojiImpactado,
+    imageWidth: 100,
+    imageHeight: 100,
+    title: "Oh no! Ninguna combinación ganadora",
+    text: "No ganaste puntos",
+    showConfirmButton: false,
+    timer: 3000,
+    backdrop: false,
+    customClass: {
+      popup: "puntos-alert-small animate__animated",
+      title: "puntos-title-small",
+      htmlContainer: "puntos-text-small",
+    },
+    showClass: {
+      popup: "animate__animated animate__bounceInRight",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+};
+
+//Inicio Sesion Alertas
+
+export const showLoginAlert = () => {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    text: "Todo listo! Bienvenido de nuevo a Pixel Slots!",
+    imageWidth: 100,
+    imageHeight: 100,
+    imageAlt: "Emoji Bienvenida",
+    showConfirmButton: false,
+    timer: 1000,
+  });
+};
+
+//Registro Alertas
+export const showRegisterAlert = () => {
+  Swal.fire({
+    position: "top-end",
+    title: "Registro exitoso!",
+    imageUrl: EmojiEstrellado,
+    imageWidth: 100,
+    imageHeight: 100,
+    imageAlt: "Personaje Pixel Art",
+    showConfirmButton: false,
+    timer: 1000,
+  });
+};
+
+/*
+///Alerta de fin de juego JOSUE ESTA ES LA ALERTA
+  const showEndGameAlert = () => {
+    Swal.fire({
+      title: "¡Alto ahí!",
+      text: "Te has quedado sin fichas. Game Over...",
+      imageUrl: GiftTriste,
+      imageWidth: 100,
+      imageHeight: 100,
+      showConfirmButton: true,
+      showCancelButton: true,
+      cancelButtonText: "Irse",
+      confirmButtonText: "Ver Top 10",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+      didOpen: () => {
+        const button = document.querySelector(".swal2-confirm");
+        if (button) {
+          button.classList.add(
+            "animate__animated",
+            "animate__rubberBand",
+            "animate__infinite"
+          );
+        }
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/ranking"); //
+      }
+    });
+  };
+  */
