@@ -4,6 +4,7 @@ import fondoMaquinas from "../assets/img/Fondo-maquinas.png";
 import maquina from "../assets/img/Maquina.png";
 import palanca from "../assets/img/Palanca.png";
 import moneda from "../assets/img/Moneda.gif";
+import estrella from "../assets/img/Estrella.gif";
 import palancagif from "../assets/img/Palanca.gif";
 
 
@@ -19,7 +20,7 @@ function Game() {
           <img src={palanca} className="img-Palanca position-absolute" alt="Palanca" />
         </div>
         <div className="rectangulo1">
-          <img src={moneda} className="icono" alt="Moneda"/>
+          <img src={estrella} className="icono" alt="Moneda"/>
            Puntos:<span className="valor">4</span>
          </div>
          <div className="rectangulo">
