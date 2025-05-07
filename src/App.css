@@ -33,11 +33,24 @@ a:hover {
 }
 
 footer {
+  /**/
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 20px;
-  color: #b4abc7;
+  color: #d1c8e3;
   background-color: #15032d;
 }
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+.puntos-alert-small {
+  width: 300px !important;
+}
+
+.puntos-title-small {
+  font-size: 1rem !important;
+}
+
+.puntos-text-small {
+  font-size: 1rem !important;
 }

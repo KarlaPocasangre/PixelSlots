@@ -13,28 +13,28 @@ function Footer() {
         <div>
           <span
             onClick={showTermsAlert}
-            className=" me-3"
+            className=" me-5 "
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Terminos
           </span>
           <span
             onClick={showCreditsAlert}
-            className=" me-3"
+            className=" me-5"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Atribuciones
           </span>
           <span
             onClick={showcontactAlert}
-            className=" me-3"
+            className=" me-5"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Contacto
           </span>
           <span
             onClick={showAboutUsAlert}
-            className=" me-3"
+            className=" me-5"
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Sobre Nosotros
