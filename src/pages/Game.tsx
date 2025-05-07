@@ -1,3 +1,4 @@
+import "../css/Auth.css";
 import fondodegradado from "../assets/img/Fondo-degradado.png";
 function Game() {
   return (
