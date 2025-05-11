@@ -1,0 +1,38 @@
+.fondocalle {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    max-width: 500px;
+    width: 90%;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .login-contenido {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 20px;
+      height: auto;
+    }
+  
+    .titulo-registro {
+      font-size: 36px !important;
+    }
+  }
+  
+  .error-msg {
+    font-size: 0.875rem;
+  }
+  

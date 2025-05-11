@@ -1,0 +1,82 @@
+.fondocalle {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor del registro */
+  .registro-container {
+    max-width: 600px;
+    width: 90%;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  /* Contenido del formulario */
+  .registro-contenido {
+    width: 100%;
+  }
+  
+  .titulo-registro {
+    color: #ffe448;
+    font-size: 50px;
+  }
+  
+  /* Estilo de inputs */
+  input.form-control {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .registro-container {
+      padding: 20px;
+      height: auto;
+    }
+  
+    .titulo-registro {
+      font-size: 36px;
+      text-align: center;
+    }
+  
+    .registro-contenido {
+      width: 100%;
+    }
+  
+    .d-flex.justify-content-between > div {
+      width: 100% !important;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo-registro {
+      font-size: 28px;
+    }
+  
+    .btn {
+      width: 100% !important;
+    }
+  }
+  
+  /* Mensajes de error */
+  .error-msg {
+    font-size: 0.875rem;
+    color: #ff6b6b;
+  }
+  
+  .registro-btn {
+    background-color: #ff42ff;
+    color: white;
+    width: 150px;
+  }
+  
