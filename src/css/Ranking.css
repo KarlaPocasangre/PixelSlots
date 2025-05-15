@@ -1,3 +1,40 @@
-.table {
-  font-family: "Courier New", Courier, monospace;
+.ranking-page {
+  background-color: #10102a;
+  color: white;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ranking-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+.tabla-sin-borde th,
+.tabla-sin-borde td,
+.tabla-sin-bordes table,
+.tabla-sin-bordes th,
+.tabla-sin-bordes td {
+  border: none !important;
+}
+
+.anim-hover:hover {
+  animation: pulse 1s;
+}
+
+.tabla-sin-bordes tbody tr {
+  transition: transform 0.3s ease;
+}
+
+.tabla-sin-bordes tbody tr:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
 }
