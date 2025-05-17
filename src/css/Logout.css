@@ -6,17 +6,33 @@
   }
   
   /* Contenedor del registro */
-  .registro-container {
-    max-width: 600px;
-    width: 90%;
-    border-radius: 20px;
-    border: 2px solid #ffffff;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
+/* Alineación general */
+.registro-container {
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem; /* Espacio interno */
+  border-radius: 29px;
+  border: 2px solid #E2C2F6;
+  background-color: #170234E0;
+  box-shadow: 0 4px 10px #FFFFFF8F;
+  opacity: 0.88;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.titulo-registro {
+  color: #ffe448;
+  font-size: 2.5rem;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
   
   /* Contenido del formulario */
   .registro-contenido {
@@ -25,17 +41,64 @@
   
   .titulo-registro {
     color: #ffe448;
-    font-size: 50px;
+    font-size: 2.5rem;
+    text-align: center;
   }
   
-  /* Estilo de inputs */
-  input.form-control {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-  }
-  
+/* Input personalizado */
+.input-arcade {
+  background-color: #E3D6FF;
+  border: 2px solid #B93CBD;
+  border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  color: #261248;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Organización en columnas */
+.form-row {
+  display: flex;
+  gap: 15px; 
+  flex-wrap: wrap;
+  margin-bottom: 0rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 170px;
+}
+
+  /* Mensajes de error */
+ .error-msg {       
+  height: 15px; 
+  color: #A1FFF7; 
+  font-size: 15px;
+  margin-top: 5px;
+  display: block;
+  text-shadow: 0 0 2px #181718;
+}
+
+
+.registro-btn {
+  font-size: 30px;
+  background-color: #E53CFF;
+  color: #FFFFFF;
+  width: 210px;
+  height: 55px;
+  border-radius: 14px;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.registro-btn:active {
+  background-color: #FFC13C;
+  transform: scale(0.96);
+}
+
+    
   /* Responsividad */
   @media (max-width: 768px) {
     .registro-container {
@@ -60,23 +123,11 @@
   
   @media (max-width: 480px) {
     .titulo-registro {
-      font-size: 28px;
+      font-size: 2rem;
     }
   
     .btn {
       width: 100% !important;
     }
-  }
-  
-  /* Mensajes de error */
-  .error-msg {
-    font-size: 0.875rem;
-    color: #ff6b6b;
-  }
-  
-  .registro-btn {
-    background-color: #ff42ff;
-    color: white;
-    width: 150px;
   }
   

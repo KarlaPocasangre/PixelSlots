@@ -4,7 +4,10 @@
     height: 100vh;
     overflow: hidden;
   }
-  
+  .registro {
+      font-size: 96px;
+      color: #ffe448;
+    }
   .full-center {
     display: flex;
     flex-direction: column;
@@ -19,8 +22,6 @@
     margin-bottom: 2rem; 
   }
 
-
-  
   .hearts-img {
     width: 25vw;
     max-width: 250px;

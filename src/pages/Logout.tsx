@@ -1,5 +1,7 @@
+
 import "../css/Logout.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
+import { Link } from "react-router-dom";
 
 function Registro() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -38,7 +40,7 @@ function Registro() {
 
   const mostrarError = (elemento: HTMLElement, mensaje: string) => {
     const small = document.createElement("small");
-    small.className = "text-danger error-msg";
+    small.className = "error-msg";
     small.innerText = mensaje;
     elemento.parentNode?.appendChild(small);
   };
@@ -56,30 +58,35 @@ function Registro() {
             {/* Correo */}
             <div className="mb-3">
               <label htmlFor="correo">Correo</label>
-              <input type="email" className="form-control" id="correo" />
+              <input type="email" className="input-arcade" id="correo" />
+              
             </div>
 
             {/* Fecha y Usuario */}
-            <div className="d-flex justify-content-between flex-wrap mb-3 gap-2">
-              <div className="form-group" style={{ flex: 1 }}>
+            <div className="form-row">
+              <div className="form-group">
                 <label htmlFor="fecha">Fecha de Nacimiento</label>
-                <input type="date" className="form-control" id="fecha" />
+                <input type="date" className="input-arcade" id="fecha" />
+                
               </div>
-              <div className="form-group" style={{ flex: 1 }}>
+              <div className="form-group">
                 <label htmlFor="usuario">Usuario</label>
-                <input type="text" className="form-control" id="usuario" />
+                <input type="text" className="input-arcade" id="usuario" />
+             
               </div>
             </div>
 
             {/* Contraseña y Confirmar */}
-            <div className="d-flex justify-content-between flex-wrap mb-3 gap-2">
-              <div className="form-group" style={{ flex: 1 }}>
+            <div className="from-row">
+              <div className="form-group">
                 <label htmlFor="contrasena">Contraseña</label>
-                <input type="password" className="form-control" id="contrasena" />
+                <input type="password" className="input-arcade" id="contrasena" />
+                
               </div>
               <div className="form-group" style={{ flex: 1 }}>
                 <label htmlFor="confirmar">Confirmar contraseña</label>
-                <input type="password" className="form-control" id="confirmar" />
+                <input type="password" className="input-arcade" id="confirmar" />
+                
               </div>
             </div>
 
@@ -93,14 +100,14 @@ function Registro() {
 
             {/* Botón */}
             <div className="text-center mb-3">
-              <button type="submit" className="btn registro-btn">
+              <button type="submit" className="registro-btn">
                 Registrarse
               </button>
             </div>
           </form>
 
           <p className="text-center">
-            Ya tienes cuenta? <a href="#" style={{ color: "#00FFB2" }}>Inicia Sesión!</a>
+            Ya tienes cuenta? <Link to="/login" style={{ color: "#00FFB2" }}>Inicia Sesión!</Link>
           </p>
         </div>
       </div>
