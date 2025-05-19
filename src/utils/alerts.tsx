@@ -232,7 +232,7 @@ export const showCreditsAlert = () => {
         <a href="https://www.flaticon.es/iconos-gratis/emojis" target="_blank" title="Emojis iconos">Emojis iconos creados por YardenG - Flaticon</a><br>
         <a href="https://www.flaticon.es/iconos-gratis/gritar" title="gritar iconos">Gritar iconos creados por YardenG - Flaticon</a><br><br>
        Imagenes usadas de <a href="http://www.freepik.es/">Freepik</a>: <br>
-        <a href="https://www.freepik.es/vector-gratis/diseno-patron-pixeles-degradados_66233431.htm#fromView=keyword&page=1&position=1&uuid=d1628a1a-76db-4c5d-aa3d-fd5da0a7be4c&query=Fondo+Consolas+Retro" target="_blank" title="Fondo Consolas Retro">Símbolos de juego utilizados en el slot Pixel Slots 2025</a><br>
+        <a href="https://www.freepik.es/vector-gratis/diseno-patron-pixeles-degradados_66233431.htm#fromView=keyword&page=1&position=1&uuid=d1628a1a-76db-4c5d-aa3d-fd5da0a7be4c&query=Fondo+Consolas+Retro" target="_blank" title="Fondo Consolas Retro">Diseño de patrón de píxeles degradados</a><br>
 
         <br><b>🎬Otros Recursos:</b><br>
         Animaciones proporcionadas por <a href="https://animate.style/" target="_blank" title="Animate.css">Animate.css</a>.<br>

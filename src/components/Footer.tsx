@@ -2,41 +2,26 @@ import { showTermsAlert } from "../utils/alerts";
 import { showAboutUsAlert } from "../utils/alerts";
 import { showCreditsAlert } from "../utils/alerts";
 import { showcontactAlert } from "../utils/alerts";
+import "../css/Footer.css";
 
 function Footer() {
   return (
-    <footer className="  py-1 mt-auto">
+    <footer className="py-1 mt-auto">
       <div className="container text-center">
-        <p className="mb-1">
+        <p className="mb-2">
           © 2025 PixelSlots. Todos los derechos reservados.
         </p>
         <div>
-          <span
-            onClick={showTermsAlert}
-            className=" me-5 "
-            style={{ cursor: "pointer", textDecoration: "underline" }}
-          >
-            Terminos
+          <span onClick={showTermsAlert} className="footer-link me-4">
+            Términos
           </span>
-          <span
-            onClick={showCreditsAlert}
-            className=" me-5"
-            style={{ cursor: "pointer", textDecoration: "underline" }}
-          >
+          <span onClick={showCreditsAlert} className="footer-link me-4">
             Atribuciones
           </span>
-          <span
-            onClick={showcontactAlert}
-            className=" me-5"
-            style={{ cursor: "pointer", textDecoration: "underline" }}
-          >
+          <span onClick={showcontactAlert} className="footer-link me-4">
             Contacto
           </span>
-          <span
-            onClick={showAboutUsAlert}
-            className=" me-5"
-            style={{ cursor: "pointer", textDecoration: "underline" }}
-          >
+          <span onClick={showAboutUsAlert} className="footer-link me-4">
             Sobre Nosotros
           </span>
         </div>

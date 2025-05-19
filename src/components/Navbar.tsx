@@ -51,7 +51,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
-        <NavLink className="navbar-brand text-light" to="/">
+        <NavLink className="navbar-brand text-light logo-glow" to="/">
           PixelSlots
         </NavLink>
         <button
