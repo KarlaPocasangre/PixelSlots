@@ -1,0 +1,128 @@
+/* Vista general */
+.game-viewport {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondo de la pantalla */
+.background {
+  width: 100%;
+  min-height: 100dvh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Contenido principal */
+.content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* Envoltorio para centrar la máquina */
+.machine-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative; /* ⬅️ esto permite que la palanca se posicione encima */
+}
+
+
+/* Máquina */
+.machine {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+
+}
+
+/* Ajuste de centrado solo en escritorio */
+@media (min-width: 769px) {
+  .maquina-ajustada {
+    margin-left: 200px; /* Ajusta según lo que visualmente te guste */
+  }
+}
+
+/*Palanca*/
+.palanca {
+  position: absolute;
+  top: 380px;       /* hacia arriba */
+  left: 350px;        /* hacia la derecha relativa a la máquina */
+  width: 100px;
+  height: auto;
+  z-index: 10;      /* asegura que esté encima */
+}
+@media (max-width: 768px) {
+  .palanca {
+    width: 100px;         /* tamaño visible pero no gigante */
+    top: 350px;          /* ajusta para que quede encima de la máquina en móvil */
+    left: 140px;           /* centrado relativo */
+    transform: translateX(-50%); /* centra horizontalmente */
+  }
+}
+
+@media (max-width: 768px) {
+  .maquina-ajustada {
+    margin-left: 0; /* No mover en móvil */
+  }
+}
+
+/* Panel de info (a la derecha o abajo en móvil) */
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+/* Cuadro de fichas/puntos */
+.info-box {
+  background-color: #170234e0;
+  color: white;
+  border: 2px solid #ffffffaa;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  box-shadow: 0 0 6px #00000066;
+}
+
+.icono {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.valor {
+  color: gold;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-panel {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
