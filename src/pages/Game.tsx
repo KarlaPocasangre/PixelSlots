@@ -1,35 +1,42 @@
-import "../css/Game.css"; // Usamos el CSS correcto para la página de juego
+import "../css/Game.css";
 
-import fondodegradado from "../assets/img/Fondo-degradado.png";
-import fondoMaquinas from "../assets/img/Fondo-maquinas.png";
 import maquina from "../assets/img/Maquina.png";
-import palanca from "../assets/img/Palanca.png";
+import fondo from "../assets/img/Fondo-maquinas.png";
+import palanca from "..//assets/img/Palanca.png";
+import palancaGif from "..//assets/img/Palanca.gif";
 import moneda from "../assets/img/Moneda.gif";
 import estrella from "../assets/img/Estrella.gif";
-import palancagif from "../assets/img/Palanca.gif";
 
 function Game() {
   return (
-    <>
+    <div className="game-viewport">
       <div
-        className="fondo d-flex justify-content-center align-items-center w-100"
-        style={{ backgroundImage: `url(${fondodegradado})` }}
+        className="background"
+        style={{
+          backgroundImage: `url(${fondo})`,
+        }}
       >
-        <div className="contenedor-maqu">
-          <img src={fondoMaquinas} className="img-maqui" alt="Fondo máquinas" />
-          <img src={maquina} className="img-MaquinaGrande position-absolute top-50  start-50 translate-middle w-0" alt="Máquina" />
-          <img src={palanca} className="img-Palanca position-absolute" alt="Palanca" />
-        </div>
-        <div className="rectangulo1">
-          <img src={estrella} className="icono" alt="Moneda" />
-          Puntos:<span className="valor">4</span>
-        </div>
-        <div className="rectangulo">
-          <img src={moneda} className="icono" alt="Moneda" />
-          Fichas:<span className="valor">4</span>
+        <div className="content">
+          <div className="machine-wrapper">
+            {/* ✅ Clase ajustada */}
+            <img src={maquina} alt="Máquina" className="machine maquina-ajustada" />
+            <img src={palanca} alt="Palanca" className="palanca" />
+          </div>
+
+            <div className="info-panel info-ajustada">
+                  <div className="info-box">
+                    <img src={moneda} className="icono" alt="Fichas" />
+                    Fichas: <span className="valor">4</span>
+                  </div>
+            <div className="info-box">
+              <img src={estrella} className="icono" alt="Puntos" />
+              Puntos: <span className="valor">1000</span>
+            </div>
+          </div>
+
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
