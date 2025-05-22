@@ -1,10 +1,10 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import sorpresa from "../assets/img/emoji-sorprendido.png";
+import sorpresa from "../assets/img/conmocionado.png";
 import "../css/Navbar.css";
 
 function Navbar() {
-  const navigate = useNavigate(); // Para redirigir después de cerrar sesión
+  const navigate = useNavigate();
 
   const navLinkStyles = ({ isActive }: { isActive: boolean }) => ({
     color: isActive ? "#f7c100" : "#ffffff",
@@ -16,8 +16,8 @@ function Navbar() {
       title: "Cerrar sesión",
       text: "¿Estás seguro de que quieres cerrar sesión?",
       imageUrl: sorpresa,
-      imageWidth: 100,
-      imageHeight: 100,
+      imageWidth: 140,
+      imageHeight: 140,
       imageAlt: "emoji sorprendido",
       showCancelButton: true,
       confirmButtonText: "Sí, cerrar sesión",

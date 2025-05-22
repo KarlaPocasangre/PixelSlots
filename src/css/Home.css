@@ -14,19 +14,13 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 1%;
   border-radius: 5px;
-  width: 88%;
-  max-width: 470px;
+  width: 90%;
+  max-width: 490px;
   margin: auto;
-  margin-bottom: 1%;
-  margin-top: 1%;
+
   box-shadow: 0 5px 10px #211827;
 }
 
-.Bienvenida {
-  font-size: large;
-  font-weight: bold;
-  text-align: center;
-}
 .container-main .btn {
   background-color: #f7c100;
   border: none;
@@ -43,22 +37,38 @@
   color: #261248;
   font-size: large;
   letter-spacing: normal;
-  padding: 5px;
+  padding: 8px;
   text-align: justify;
 }
 .logohome {
-  max-width: 80%;
-  width: 400px;
+  width: 85%;
+  max-width: none;
   height: auto;
   display: block;
-  margin: 0 auto;
-  padding: 10px;
+  margin: 30px auto 0 auto; /* empuja el logo hacia abajo */
 }
+
 .emojigafas {
   max-width: 80%;
-  width: 90px;
+  width: 80px;
   height: auto;
   display: block;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
+}
+@media screen and (max-width: 480px) {
+  .container-main .btn {
+    font-size: 0.95rem;
+    padding: 10px;
+    max-width: 320px;
+  }
+
+  .logohome {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .text-home {
+    font-size: 1rem;
+  }
 }
