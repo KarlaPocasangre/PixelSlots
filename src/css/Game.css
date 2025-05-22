@@ -36,16 +36,16 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+
   position: relative; /* ⬅️ esto permite que la palanca se posicione encima */
 }
 
-
 /* Máquina */
 .machine {
-  max-width: 500px;
+  max-width: 560px;
   width: 100%;
   height: auto;
-
+  margin-top: -40px;
 }
 
 /* Ajuste de centrado solo en escritorio */
@@ -58,17 +58,17 @@
 /*Palanca*/
 .palanca {
   position: absolute;
-  top: 380px;       /* hacia arriba */
-  left: 350px;        /* hacia la derecha relativa a la máquina */
+  top: 380px; /* hacia arriba */
+  left: 350px; /* hacia la derecha relativa a la máquina */
   width: 100px;
   height: auto;
-  z-index: 10;      /* asegura que esté encima */
+  z-index: 10; /* asegura que esté encima */
 }
 @media (max-width: 768px) {
   .palanca {
-    width: 90px;         /* tamaño visible pero no gigante */
-    top: 260px;          /* ajusta para que quede encima de la máquina en móvil */
-    left: 90px;           /* centrado relativo */
+    width: 90px; /* tamaño visible pero no gigante */
+    top: 260px; /* ajusta para que quede encima de la máquina en móvil */
+    left: 90px; /* centrado relativo */
     transform: translateX(-50%); /* centra horizontalmente */
   }
 }
@@ -86,8 +86,6 @@
   gap: 1rem;
 }
 
-
-
 /* Cuadro de fichas/puntos */
 .info-box {
   background-color: #170234e0;
@@ -102,9 +100,8 @@
 }
 
 .icono {
-  width: 28px;
-  height: 28px;
-  margin-right: 10px;
+  width: 45px;
+  height: 45px;
 }
 
 .valor {
@@ -136,12 +133,11 @@
   gap: 13px; /* Espacio entre imágenes */
   z-index: 5;
   padding: 67px 4px; /* Aumenta tamaño del cuadro */
-
 }
 
 .slot-image {
-  width: 70px; /* MÁS grande */
-  height: 90px;
+  width: 85px; /* MÁS grande */
+  height: 85px;
   image-rendering: pixelated;
   background-color: white;
   padding: 8px;
@@ -150,16 +146,16 @@
 
 @media (max-width: 768px) {
   .slot-display {
-    top: 140px;            /* Baja un poco para móvil */
-    left: 49%;             /* Centrado horizontal */
+    top: 140px; /* Baja un poco para móvil */
+    left: 49%; /* Centrado horizontal */
     transform: translateX(-50%);
     gap: 10px;
-    padding: 20px 10px;    /* Más compacto */
+    padding: 20px 10px; /* Más compacto */
   }
 
   .slot-image {
-    width: 50px;          /*Hcae mas grande la img*/
-    height: 60px;         /*Hcae mas ancha la img*/
+    width: 50px; /*Hcae mas grande la img*/
+    height: 60px; /*Hcae mas ancha la img*/
     padding: 5px;
   }
 }
