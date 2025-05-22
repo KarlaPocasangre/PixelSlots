@@ -66,9 +66,9 @@
 }
 @media (max-width: 768px) {
   .palanca {
-    width: 100px;         /* tamaño visible pero no gigante */
-    top: 350px;          /* ajusta para que quede encima de la máquina en móvil */
-    left: 140px;           /* centrado relativo */
+    width: 90px;         /* tamaño visible pero no gigante */
+    top: 260px;          /* ajusta para que quede encima de la máquina en móvil */
+    left: 90px;           /* centrado relativo */
     transform: translateX(-50%); /* centra horizontalmente */
   }
 }
