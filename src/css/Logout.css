@@ -32,6 +32,9 @@
   overflow-wrap: break-word;
   max-width: 100%;
 }
+.me-5{
+  color: #ffe448;
+}
 
   
   /* Contenido del formulario */
@@ -58,6 +61,12 @@
   display: block;
   box-sizing: border-box;
 }
+.input-arcade:focus {
+  outline: none; /* Quita el borde negro predeterminado del navegador */
+  border-color: #E53CFF; /* Cambia el color del borde */
+  box-shadow: 0 0 8px #E53CFF; /* Añade un brillo si lo deseas */
+}
+
 
 /* Organización en columnas */
 .form-row {
@@ -91,11 +100,36 @@
   height: 55px;
   border-radius: 14px;
   transition: background-color 0.1s ease, transform 0.1s ease;
+  border: none;
 }
 
+/* 💡 Efecto de iluminación al pasar el mouse */
+.registro-btn:hover {
+  background-color: #FFC13C;
+  box-shadow: 0 0 8px #FFC13C, 0 0 16px #FFC13C;
+  cursor: pointer;
+}
+
+/* 🎯 Efecto al presionar el botón */
 .registro-btn:active {
   background-color: #FFC13C;
+  box-shadow: 0 0 4px #FFC13C;
   transform: scale(0.96);
+}
+
+
+/* 💡 Efecto de iluminación al pasar el mouse */
+.boton:hover {
+  background-color: #FF66FF;
+  box-shadow: 0 0 8px #FF66FF, 0 0 16px #FF00CC;
+  cursor: pointer;
+}
+
+/* 🎯 Efecto al presionar el botón */
+.boton:active {
+  background-color: #FFC13C; /* color cuando se presiona */
+  box-shadow: 0 0 4px #FFC13C;
+  transform: scale(0.96); /* leve reducción tipo clic */
 }
 
     

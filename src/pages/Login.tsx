@@ -59,7 +59,7 @@ function Login() {
               </div>
 
               <div className="d-flex justify-content-center">
-                <button type="submit" className="boton">ENTRAR</button>
+                <button type="submit" className="Lboton">ENTRAR</button>
               </div>
             </form>
 

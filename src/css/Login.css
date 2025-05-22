@@ -27,6 +27,7 @@
 .login-contenido1 {
   width: 100%;
 }
+
 .form-group-arcade {
   width: 100%;
   max-width: 90%;
@@ -54,6 +55,12 @@
   display: block;
   box-sizing: border-box;
 }
+.input-arcade:focus {
+  outline: none; /* Quita el borde negro predeterminado del navegador */
+  border-color: #E53CFF; /* Cambia el color del borde */
+  box-shadow: 0 0 8px #E53CFF; /* Añade un brillo si lo deseas */
+}
+
 
 .error {
   min-height: 18px;
@@ -65,22 +72,31 @@
 }
 
 
-  .boton{
-    font-size: 30px;
-    background-color: #E53CFF;
-    color: #FFFFFF;
-    width: 40%;
-    height: 50px;
-    border-radius: 14px;
-    transition: background-color 0.2s ease;
-    
-  }
-  .boton:active {
-  background-color: #FFC13C; /* color cuando se presiona */
-  transform: scale(0.97); /* opcional: efecto de "presionar" */
+.Lboton {
+  font-size: 30px;
+  background-color: #E53CFF;
+  color: #FFFFFF;
+  width: 40%;
+  height: 50px;
+  border-radius: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  border: none;
 }
 
-  
+/* 💡 Efecto de iluminación al pasar el mouse */
+.Lboton:hover {
+  background-color: #FFC13C;
+  box-shadow: 0 0 8px #FFC13C, 0 0 16px #FFC13C;
+  cursor: pointer;
+}
+
+/* 🎯 Efecto al presionar el botón */
+.Lboton:active {
+  background-color: #FFC13C; /* color cuando se presiona */
+  box-shadow: 0 0 4px #FFC13C;
+  transform: scale(0.96); /* leve reducción tipo clic */
+}
+
   @media (max-width: 768px) {
     .login-container {
       padding: 20px;

@@ -2,6 +2,7 @@
 import "../css/Logout.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
 import { Link } from "react-router-dom";
+import { showTermsAlert } from "../utils/alerts";
 
 function Registro() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -94,14 +95,18 @@ function Registro() {
             <div className="form-check mb-3">
               <input type="checkbox" className="form-check-input" id="terminosCheck" />
               <label className="form-check-label" htmlFor="terminosCheck">
-                Acepto los <span style={{ color: "#FFD700" }}>Términos y Condiciones</span>
+                Acepto los  <span
+            onClick={showTermsAlert}
+            className=" me-5 "
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+          > Terminos y Condciones. </span>
               </label>
             </div>
 
             {/* Botón */}
             <div className="text-center mb-3">
               <button type="submit" className="registro-btn">
-                Registrarse
+                REGISTRARSE
               </button>
             </div>
           </form>
