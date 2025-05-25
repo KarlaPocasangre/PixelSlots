@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
-import "../css/Login.css";
+import "../css/Auth.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
 import { useState } from "react";
 
 function Login() {
-  const [errores, setErrores] = useState<{ correo?: string; contrasena?: string }>({});
+  const [errores, setErrores] = useState<{
+    correo?: string;
+    contrasena?: string;
+  }>({});
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const correoInput = document.getElementById("correo") as HTMLInputElement;
-    const contrasenaInput = document.getElementById("contraseña") as HTMLInputElement;
+    const contrasenaInput = document.getElementById(
+      "contraseña"
+    ) as HTMLInputElement;
 
     let erroresForm: { correo?: string; contrasena?: string } = {};
 
@@ -40,33 +45,34 @@ function Login() {
     >
       <div className="login-container1 p-4">
         <div className="login-contenido mx-auto">
-          <h2 className="registro text-center mb-3" >
-            LOGIN
-          </h2>
-
-        
+          <h2 className="titulo-Auth text-center mb-3">LOGIN</h2>
           <form onSubmit={handleSubmit}>
-              <div className="form-group-arcade">
-                <label htmlFor="correo">Correo</label>
-                <input type="email" id="correo" className="input-arcade" />
-                {errores.correo && <small className="error">{errores.correo}</small>}
-              </div>
+            <div className="form-group-arcade">
+              <label htmlFor="correo">Correo</label>
+              <input type="email" id="correo" className="input-arcade" />
+              {errores.correo && (
+                <small className="error">{errores.correo}</small>
+              )}
+            </div>
 
-              <div className="form-group-arcade">
-                <label htmlFor="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" className="input-arcade" />
-                {errores.contrasena && <small className="error">{errores.contrasena}</small>}
-              </div>
+            <div className="form-group-arcade">
+              <label htmlFor="contraseña">Contraseña</label>
+              <input type="password" id="contraseña" className="input-arcade" />
+              {errores.contrasena && (
+                <small className="error">{errores.contrasena}</small>
+              )}
+            </div>
 
-              <div className="d-flex justify-content-center">
-                <button type="submit" className="Lboton">ENTRAR</button>
-              </div>
-            </form>
-
+            <div className="d-flex justify-content-center">
+              <button type="submit" className="auth-btn">
+                ENTRAR
+              </button>
+            </div>
+          </form>
 
           <p className="text-center mt-3">
             No tienes cuenta?{" "}
-            <Link to="/logout" style={{ color: "#FFD700" }}>
+            <Link to="/logout" className="link-auth">
               Regístrate!
             </Link>
           </p>

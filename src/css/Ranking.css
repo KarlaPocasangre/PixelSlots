@@ -2,8 +2,8 @@
 .ranking-page {
   position: relative;
   color: white;
-  min-height: 100vh;
-  width: 100vw;
+  flex: 1;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,17 @@
   background-repeat: no-repeat;
   z-index: 1;
   overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.table {
+  margin-bottom: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Capa oscura sutil encima del fondo */
@@ -38,23 +49,35 @@
   z-index: 1;
   background-color: transparent;
   padding: 0.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  overflow-x: hidden;
 }
 
 /* Contenedor con fondo morado translúcido y animación al entrar */
 .tabla-morada {
   background: linear-gradient(rgba(20, 0, 50, 0.8), rgba(60, 34, 139, 0.6)),
     rgba(60, 34, 139, 0.6);
-  padding: 1.5rem;
+  padding: 0.1rem;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 20px rgba(218, 181, 234, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 7px;
   color: white;
+  margin: auto auto 0.1rem auto;
+  overflow-x: auto;
+}
 
-  /* 🎉 Animación de entrada */
-  animation: fadeInUp;
-  animation-duration: 1s;
-  animation-timing-function: ease;
+@media (max-width: 576px) {
+  .tabla-morada td,
+  .tabla-morada th {
+    font-size: 0.85rem;
+  }
+
+  .ranking-page {
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
 }
 
 /* Quita fondo blanco del <table> de Bootstrap */
@@ -67,6 +90,13 @@
   background-color: transparent !important;
   color: rgb(255, 255, 255) !important;
   border: none !important;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+}
+
+/* Establece ancho mínimo para evitar saltos en móvil */
+.tabla-morada table {
+  min-width: 450px;
 }
 
 /* Línea inferior en encabezado */
@@ -76,12 +106,7 @@
 
 /* Efecto al hacer hover en fila */
 .tabla-sin-bordes tbody tr {
-  transition: transform 0.3s ease;
-}
-.tabla-sin-bordes tbody tr:hover {
-  transform: scale(1.02);
-  z-index: 1;
-  position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Elimina bordes */
@@ -91,4 +116,11 @@
 .tabla-sin-bordes th,
 .tabla-sin-bordes td {
   border: none !important;
+}
+
+.hover-rubber:hover {
+  animation: rubberBand 1s;
+  animation-name: rubberBand;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }

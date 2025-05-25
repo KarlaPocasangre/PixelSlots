@@ -2,6 +2,143 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+.link-auth {
+  color: #ffe448;
+  text-decoration: none;
+  cursor: "pointer";
+}
+.link-auth:hover {
+  color: #74d7f2;
+  cursor: "pointer";
+  text-decoration: none;
 }
 
+.login-container1,
+.registro-container {
+  width: 90%;
+  border-radius: 20px;
+  background-color: rgba(23, 2, 52, 0.85);
+  box-shadow: 0 4px 10px #ffffff8f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.login-contenido1,
+.registro-contenido {
+  width: 100%;
+}
+
+.error {
+  height: 15px;
+  color: #a1fff7;
+  font-size: 15px;
+  display: block;
+  text-shadow: 0 0 2px #181718;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error {
+  animation: slideDown 0.3s ease forwards;
+}
+
+.titulo-Auth {
+  font-size: 360%;
+  color: #ffe448;
+}
+
+.titulo-Auth:hover {
+  animation: rubberBand 1s;
+  animation-fill-mode: both;
+}
+.input-arcade {
+  background-color: #e3d6ff;
+  border: 2px solid #b93cbd;
+  border-radius: 6px;
+  width: 100%;
+  height: 42px;
+  color: #261248;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: block;
+  box-sizing: border-box;
+}
+.input-arcade:focus {
+  outline: none;
+  border-color: #e53cff;
+  box-shadow: 0 0 5px #e53cff;
+}
+
+.auth-btn {
+  font-size: 30px;
+  background-color: #e53cff;
+  color: #ffffff;
+  border-radius: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+  border: none;
+  padding: 1% 5%;
+  margin: 1%;
+}
+
+.auth-btn:hover {
+  background-color: #ffc13c;
+  box-shadow: 0 0 1px #c973f4, 0 0 10px #ffc13c;
+  cursor: pointer;
+  animation: rubberBand 1s;
+  animation-fill-mode: both;
+}
+
+.auth-btn:active {
+  transform: scale(0.96);
+}
+
+.login-container1 {
+  max-width: 470px;
+  height: auto;
+  font-size: 18px;
+}
+.form-group-arcade {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group-arcade label {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.registro-container {
+  max-width: 600px;
+  font-size: 18px;
+}
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 0rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 170px;
+}

@@ -1,11 +1,13 @@
 import Swal from "sweetalert2";
 import logoUSO from "../assets/img/LogoUsoPixel.png";
-import tutorial from "../assets/img/Maquina.png";
+import LogoPixelSlots from "../assets/img/Logo-PixelSlots.png";
 import ficha from "../assets/img/Moneda.gif";
 import EmojiGafas from "../assets/img/gafas-de-sol.png";
 import EmojiFiesta from "../assets/img/fiesta.png";
 import EmojiImpactado from "../assets/img/conmocionado.png";
 import EmojiEstrellado from "../assets/img/estrellado.png";
+import Tutorial from "../assets/img/Maquina.png";
+import palanca from "../assets/img/Palanca.gif";
 
 export const showMustLoginAlert = () => {
   Swal.fire({
@@ -26,36 +28,54 @@ export const showMustLoginAlert = () => {
 
 export const showTutorialAlert = () => {
   Swal.fire({
-    title: "Tutorial del Juego",
+    title: "Reglas del juego",
     html: `
-      <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
+      <div style="
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.6;
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 10px;
+      ">
 
-        <b>¿Cómo jugar?</b><br><br>
-        <div style="margin-left: 10px;">
-          1. Presiona la palanca para hacer girar las figuras.<br>
-          2. Cada giro consume <b style="color:#9f4abd;">1 intento</b>.<br>
-          3. Solo tienes <b style="color:#9f4abd;">5 intentos por partida</b>.<br><br>
+        <p><strong>Cómo jugar:</strong><br>
+        Presiona la <b>palanca</b> de la máquina para activar las casillas.<br>
+        El resultado se muestra en la pantalla y los puntos se suman automáticamente.</p>
+
+        <div style="text-align: center; margin: 10px 0;">
+          <img src="${Tutorial}" alt="Máquina Arcade" style="width: 100%; max-width: 300px;" />
         </div>
-        <div style="text-align:center; margin-bottom: 15px;">
-          <img src="${tutorial}" alt="Máquina de juego" style="max-width: 50%; height: auto; " />
+
+        <p><strong>Mecánica de juego:</strong><br>
+        • Al presionar el botón <em>(representado por la palanca)</em>, las <b>tres casillas</b> mostrarán símbolos aleatorios.</p>
+
+        <div style="text-align: center; margin: 10px 0;">
+          <img src="${palanca}" alt="Palanca" style="max-width: 120px; width: 100%;" />
         </div>
 
-        <b>Puntaje</b><br><br>
-        Para ganar puntos se debe tener en cuenta lo siguiente:<br>
-        <ul>
-          <li>3 figuras iguales = <b style="color:#9f4abd;">500 puntos + 150 adicionales</b></li>
-          <li>2 figuras iguales = <b style="color:#9f4abd;">200 puntos + 50 adicionales</b></li>
-          <li>3 figuras diferentes = <b style="color:#9f4abd;">0 puntos</b></li>
-        </ul><br>
+        <p>• Tienes <b>5 intentos</b> por sesión. Cada giro consume 1 ficha.</p>
 
-        <b>¿Cómo se determina el ganador?</b><br><br>
-        <div style="margin-left: 10px;">
-          1. Mayor <b style="color:#9f4abd;">puntaje total</b>.<br>
-        </div><br>
-
-        <div style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
-          ¡Mucha suerte!
+        <div style="text-align: center; margin: 10px 0;">
+          <img src="${ficha}" alt="Ficha" style="max-width: 120px; width: 100%;" />
         </div>
+
+        <p>• Después del quinto intento, ya no podrás seguir jugando.</p><br>
+
+        <p><strong>Puntaje:</strong><br>
+        <b>3 símbolos iguales:</b> 650 pts + bono por símbolo<br>
+        <b>2 símbolos iguales:</b> 225 pts + bono por símbolo<br>
+        <b>Diferentes:</b> 0 pts</p><br>
+
+      <p><strong>Bonus:</strong><br>
+        Cada imagen te da un bonus diferente.</p><br>
+        <b>Lentes</b>: 25,<br>
+        <b>Mando de juegos</b>: 35,<br>
+        <b>Casette</b>: 15,<br>
+        <b>Cartucho de videojuego</b>: 10,<br>
+        <b>Puntero</b>: 20,<br>
+        <b>Audifonos</b>: 30,<br>
+        <b>Disco</b>: 5<br>
       </div>
     `,
     width: "600px",
@@ -133,10 +153,20 @@ export const showTermsAlert = () => {
 
 export const showAboutUsAlert = () => {
   Swal.fire({
-    title: "Sobre Nosotros",
+    imageUrl: LogoPixelSlots,
+    imageAlt: "Logo Pixel Slots",
+    imageWidth: 300,
     html: `
       <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
         <b>Sobre Pixel Slots</b><br><br>
+        <div style="text-align: left; font-size: 12px; color: gray; margin-top: 10px;">
+          Pixel Slots es una marca dedicada a la creacion de software de entretenimiento, enfocada en la creación de juegos de azar y plataformas de juego en línea. Esta plataforma fue desarrollada en refencia a la 
+          Ley Organica de la LNB, para la regulación de los juegos de azar y apuestas en línea en El Salvador. Más información en nuestros 
+          <span id="terms-link" style="cursor: pointer; text-decoration: underline; color: #9b59b6;">
+            Términos y Condiciones
+          </span>.
+          <br><br>
+        </div>
         Pixel Slots nació de la pasión por los videojuegos retro, la emoción de los juegos de azar, y el amor por los pequeños detalles que hacen grandes experiencias. 🕹️🎰<br><br>
         Somos una plataforma de entretenimiento creada para quienes buscan divertirse, desafiar la suerte y escalar posiciones en el ranking, todo en un entorno seguro, amigable y lleno de nostalgia arcade.<br><br>
         Nuestro objetivo es ofrecerte una experiencia divertida, accesible y libre de riesgos, donde puedas disfrutar de la adrenalina de los slots 🫶<br><br>
@@ -150,20 +180,26 @@ export const showAboutUsAlert = () => {
     width: "600px",
     confirmButtonText: "¡Genial!",
     showClass: {
-      popup: `
-        animate__animated
-        animate__fadeInUp
-        animate__faster
-      `,
+      popup: `animate__animated animate__fadeInUp animate__faster`,
     },
     hideClass: {
-      popup: `
-        animate__animated
-        animate__fadeOutDown
-        animate__faster
-      `,
+      popup: `animate__animated animate__fadeOutDown animate__faster`,
     },
     scrollbarPadding: false,
+    didOpen: () => {
+      const img = document.querySelector(".swal2-image");
+      if (img) {
+        img.classList.add("animate__animated", "animate__flip");
+      }
+
+      const termsLink = document.getElementById("terms-link");
+      if (termsLink) {
+        termsLink.addEventListener("click", () => {
+          Swal.close();
+          showTermsAlert();
+        });
+      }
+    },
   });
 };
 
@@ -215,16 +251,13 @@ export const showCreditsAlert = () => {
     title: "Atribuciones",
     html: `
       <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
-      <div style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
-          ❤︎ Las ilustraciones utilizadas fueron usadas con el consentimiento de sus respectivos autores, a quienes previamente se les solicitó su permiso de uso ❤︎<br><br>
-        </div>
-        
+      
         <b>🎨Ilustraciones:</b><br>
         Fondos diseñados por <a href="https://www.instagram.com/isai_sketches/" target="_blank" title="Isai Oviedo Instagram">Isai Oviedo</a> para el MMO <a href="https://bitmates.io" target="_blank" title="Bitmates">bitmates.io</a>.<br>
         Sitio web del autor: <a href="https://isai.shop/" target="_blank" title="Sitio web de Isai">https://isai.shop/</a><br>
         Galería de imágenes utilizadas: <a href="https://isai.shop/PIXEL-ART" target="_blank" title="Galería Pixel Art">https://isai.shop/PIXEL-ART</a><br><br>
 
-        Ilustración de máquina de juegos (apartado Game y Ranking) diseñada e ilustrada por: <a href="https://www.behance.net/pixeljeff" target="_blank" title="Pixel Jeff">Pixel Jeff</a><br><br>
+        Ilustración de máquina de juegos (apartado Game) diseñada e ilustrada por: <a href="https://www.behance.net/pixeljeff" target="_blank" title="Pixel Jeff">Pixel Jeff</a><br><br>
 
          <b>📸Imágenes:</b><br>
         Imagenes usadas de Flaticon: <br>

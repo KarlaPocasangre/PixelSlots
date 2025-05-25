@@ -23,40 +23,42 @@ const Ranking = () => {
 
   return (
     <div className="ranking-page">
-      <div className="ranking-container d-flex flex-column align-items-center gap-4">
+      <div className="ranking-container d-flex flex-column align-items-center animate__animated animate__fadeInUp">
         {/* Tabla Top 10 */}
-        <div className="w-100 tabla-sin-bordes tabla-morada">
-          <table className="table table-hover text-center mb-0">
-            <thead>
-              <tr>
-                <th>Top</th>
-                <th>Usuario</th>
-                <th>Puntos</th>
-                <th>Fichas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {usuariosOrdenados.map((user, index) => (
-                <tr key={index}>
-                  <td>
-                    {index === 0 ? (
-                      <span className="badge bg-warning text-dark">
-                        Mejor Puntaje
-                      </span>
-                    ) : (
-                      index + 1
-                    )}
-                  </td>
-                  <td>
-                    {user.puntos === mejorPuntaje ? "👑 " : ""}
-                    {user.nombre}
-                  </td>
-                  <td>{user.puntos}</td>
-                  <td>{user.fichas}</td>
+        <div className="w-100">
+          <div className="tabla-morada">
+            <table className="table table-hover text-center mb-0 tabla-sin-bordes">
+              <thead>
+                <tr>
+                  <th>Top</th>
+                  <th>Usuario</th>
+                  <th>Puntos</th>
+                  <th>Fichas</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {usuariosOrdenados.map((user, index) => (
+                  <tr key={index}>
+                    <td className="">
+                      {index === 0 ? (
+                        <span className="badge hover-rubber bg-warning text-dark">
+                          Mejor Puntaje
+                        </span>
+                      ) : (
+                        index + 1
+                      )}
+                    </td>
+                    <td className="">
+                      {user.puntos === mejorPuntaje ? "👑 " : ""}
+                      {user.nombre}
+                    </td>
+                    <td>{user.puntos}</td>
+                    <td>{user.fichas}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

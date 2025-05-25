@@ -1,5 +1,4 @@
-
-import "../css/Logout.css";
+import "../css/Auth.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
 import { Link } from "react-router-dom";
 import { showTermsAlert } from "../utils/alerts";
@@ -9,7 +8,7 @@ function Registro() {
     e.preventDefault();
 
     // Limpiar errores anteriores
-    document.querySelectorAll(".error-msg").forEach((s) => s.remove());
+    document.querySelectorAll(".error").forEach((s) => s.remove());
 
     let valido = true;
     const campos = [
@@ -21,16 +20,21 @@ function Registro() {
     ];
 
     campos.forEach((campo) => {
-      const input = document.getElementById(campo.id) as HTMLInputElement | null;
+      const input = document.getElementById(
+        campo.id
+      ) as HTMLInputElement | null;
       if (!input || input.value.trim() === "") {
         if (input) mostrarError(input, "*Este campo es obligatorio");
         valido = false;
       }
     });
 
-    const terminos = document.getElementById("terminosCheck") as HTMLInputElement | null;
+    const terminos = document.getElementById(
+      "terminosCheck"
+    ) as HTMLInputElement | null;
     if (!terminos?.checked) {
-      if (terminos) mostrarError(terminos, "*Debes aceptar los Términos y Condiciones");
+      if (terminos)
+        mostrarError(terminos, "*Debes aceptar los Términos y Condiciones");
       valido = false;
     }
 
@@ -41,7 +45,7 @@ function Registro() {
 
   const mostrarError = (elemento: HTMLElement, mensaje: string) => {
     const small = document.createElement("small");
-    small.className = "error-msg";
+    small.className = "error";
     small.innerText = mensaje;
     elemento.parentNode?.appendChild(small);
   };
@@ -53,14 +57,13 @@ function Registro() {
     >
       <div className="registro-container p-4">
         <div className="registro-contenido mx-auto">
-          <h2 className="titulo-registro text-center mb-3">REGISTRO</h2>
+          <h2 className="titulo-Auth text-center mb-3">REGISTRO</h2>
 
           <form onSubmit={handleSubmit}>
             {/* Correo */}
             <div className="mb-3">
               <label htmlFor="correo">Correo</label>
               <input type="email" className="input-arcade" id="correo" />
-              
             </div>
 
             {/* Fecha y Usuario */}
@@ -68,12 +71,10 @@ function Registro() {
               <div className="form-group">
                 <label htmlFor="fecha">Fecha de Nacimiento</label>
                 <input type="date" className="input-arcade" id="fecha" />
-                
               </div>
               <div className="form-group">
                 <label htmlFor="usuario">Usuario</label>
                 <input type="text" className="input-arcade" id="usuario" />
-             
               </div>
             </div>
 
@@ -81,38 +82,55 @@ function Registro() {
             <div className="from-row">
               <div className="form-group">
                 <label htmlFor="contrasena">Contraseña</label>
-                <input type="password" className="input-arcade" id="contrasena" />
-                
+                <input
+                  type="password"
+                  className="input-arcade"
+                  id="contrasena"
+                />
               </div>
               <div className="form-group" style={{ flex: 1 }}>
                 <label htmlFor="confirmar">Confirmar contraseña</label>
-                <input type="password" className="input-arcade" id="confirmar" />
-                
+                <input
+                  type="password"
+                  className="input-arcade"
+                  id="confirmar"
+                />
               </div>
             </div>
 
             {/* Términos */}
             <div className="form-check mb-3">
-              <input type="checkbox" className="form-check-input" id="terminosCheck" />
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="terminosCheck"
+              />
               <label className="form-check-label" htmlFor="terminosCheck">
-                Acepto los  <span
-            onClick={showTermsAlert}
-            className=" me-5 "
-            style={{ cursor: "pointer", textDecoration: "underline" }}
-          > Terminos y Condciones. </span>
+                Acepto los{" "}
+                <span
+                  onClick={showTermsAlert}
+                  className="me-5 link-auth"
+                  role="button"
+                  tabIndex={0}
+                >
+                  Términos y Condiciones
+                </span>
               </label>
             </div>
 
             {/* Botón */}
             <div className="text-center mb-3">
-              <button type="submit" className="registro-btn">
+              <button type="submit" className="auth-btn">
                 REGISTRARSE
               </button>
             </div>
           </form>
 
-          <p className="text-center">
-            Ya tienes cuenta? <Link to="/login" style={{ color: "#00FFB2" }}>Inicia Sesión!</Link>
+          <p className="text-center mt-3">
+            Ya tienes cuenta?{" "}
+            <Link to="/login" className="link-auth">
+              Inicia Sesión!
+            </Link>
           </p>
         </div>
       </div>

@@ -1,13 +1,43 @@
+import { useState } from "react";
 import "../css/Game.css";
 
 import maquina from "../assets/img/Maquina.png";
 import fondo from "../assets/img/Fondo-maquinas.png";
-import palanca from "..//assets/img/Palanca.png";
-//import palancaGif from "..//assets/img/Palanca.gif";
+import palanca from "../assets/img/Palanca.png";
+import palancaGif from "../assets/img/Palanca.gif";
 import moneda from "../assets/img/Moneda.gif";
 import estrella from "../assets/img/Estrella.gif";
 
+import audifonos from "../assets/img/slots/Audifonos.png";
+import cartucho from "../assets/img/slots/cartucho.png";
+import casette from "../assets/img/slots/casette.png";
+import disco from "../assets/img/slots/disco.png";
+import lentes from "../assets/img/slots/Lentes.png";
+import mando from "../assets/img/slots/Mando.png";
+import puntero from "../assets/img/slots/Puntero.png";
+
 function Game() {
+  const items = [audifonos, cartucho, casette, disco, lentes, mando, puntero];
+
+  const [slotImages, setSlotImages] = useState([audifonos, cartucho, casette]);
+
+  const [palancaActiva, setPalancaActiva] = useState(false);
+
+  const spinSlots = () => {
+    if (palancaActiva) return;
+
+    setPalancaActiva(true);
+
+    setTimeout(() => {
+      const newImages = Array.from(
+        { length: 3 },
+        () => items[Math.floor(Math.random() * items.length)]
+      );
+      setSlotImages(newImages);
+      setPalancaActiva(false);
+    }, 1000);
+  };
+
   return (
     <div className="game-viewport">
       <div
@@ -18,13 +48,30 @@ function Game() {
       >
         <div className="content">
           <div className="machine-wrapper">
-            {/* ✅ Clase ajustada */}
             <img
               src={maquina}
               alt="Máquina"
               className="machine maquina-ajustada"
             />
-            <img src={palanca} alt="Palanca" className="palanca" />
+
+            <div className="slot-display">
+              {slotImages.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`slot-${index}`}
+                  className="slot-image"
+                />
+              ))}
+            </div>
+
+            <img
+              src={palancaActiva ? palancaGif : palanca}
+              alt="Palanca"
+              className="palanca"
+              onClick={spinSlots}
+              style={{ cursor: "pointer" }}
+            />
           </div>
 
           <div className="info-panel info-ajustada">
