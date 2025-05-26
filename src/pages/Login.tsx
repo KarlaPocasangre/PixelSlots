@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/Auth.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
 import { useState } from "react";
+import { showConsentAlert } from "../utils/alerts";
 
 function Login() {
   const [errores, setErrores] = useState<{
     correo?: string;
     contrasena?: string;
   }>({});
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,8 +36,8 @@ function Login() {
     setErrores(erroresForm);
 
     if (Object.keys(erroresForm).length === 0) {
-      console.log("Iniciando sesión...");
-      // Aquí puedes redirigir o continuar con la autenticación
+      // Mostrar alerta de consentimiento
+      showConsentAlert(navigate);
     }
   };
 

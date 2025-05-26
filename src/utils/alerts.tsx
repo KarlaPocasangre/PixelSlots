@@ -466,3 +466,92 @@ export const showRegisterAlert = () => {
     });
   };
   */
+
+export const showConsentAlert = (navigate: (path: string) => void) => {
+  let checks = {
+    todo: false,
+    mayor: false,
+    terminos: false,
+  };
+
+  const handleChange = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    checks = { ...checks, [target.name]: target.checked };
+
+    // Si marca "todo", marca los otros
+    if (target.name === "todo" && target.checked) {
+      checks.mayor = true;
+      checks.terminos = true;
+
+      document.querySelector<HTMLInputElement>('input[name="mayor"]')!.checked =
+        true;
+      document.querySelector<HTMLInputElement>(
+        'input[name="terminos"]'
+      )!.checked = true;
+    }
+
+    // Si desmarca "todo", desmarca los otros
+    if (target.name === "todo" && !target.checked) {
+      checks.mayor = false;
+      checks.terminos = false;
+
+      document.querySelector<HTMLInputElement>('input[name="mayor"]')!.checked =
+        false;
+      document.querySelector<HTMLInputElement>(
+        'input[name="terminos"]'
+      )!.checked = false;
+    }
+  };
+
+  Swal.fire({
+    title: "Confirmación requerida",
+    html: `
+      <div style="text-align:left; font-size:15px; padding-left:5px;">
+        <label><input type="checkbox" name="todo" /> Acepto todo lo que se muestra a continuación</label><br/><br/>
+        <label><input type="checkbox" name="mayor" /> Soy mayor de 18 años</label><br/><br/>
+        <label>
+          <input type="checkbox" name="terminos" />
+          He leído los <span id="ver-terminos" style="color:#7b2cbf; text-decoration: underline; cursor: pointer;">términos y condiciones</span>
+        </label>
+      </div>
+    `,
+    width: "600px",
+    confirmButtonText: "Continuar",
+    showCancelButton: false,
+    scrollbarPadding: false,
+    preConfirm: () => {
+      if (checks.todo && checks.mayor && checks.terminos) {
+        return true;
+      } else {
+        Swal.showValidationMessage("Debes aceptar todo para continuar");
+        return false;
+      }
+    },
+    didOpen: () => {
+      // Agregar listeners a checkboxes
+      const container = Swal.getHtmlContainer();
+      container?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+        input.addEventListener("change", handleChange);
+      });
+
+      // Agregar listener al enlace de términos
+      const verTerminos = document.getElementById("ver-terminos");
+      if (verTerminos) {
+        verTerminos.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showTermsAlert();
+        });
+      }
+    },
+    showClass: {
+      popup: "animate__animated animate__fadeInUp animate__faster",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutDown animate__faster",
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      navigate("/");
+    }
+  });
+};
