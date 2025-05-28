@@ -13,7 +13,7 @@ function Registro() {
     let valido = true;
     const campos = [
       { id: "correo", nombre: "Correo" },
-      { id: "fecha", nombre: "Fecha de Nacimiento" },
+      { id: "edad", nombre: "Edad" },
       { id: "usuario", nombre: "Usuario" },
       { id: "contrasena", nombre: "Contraseña" },
       { id: "confirmar", nombre: "Confirmar contraseña" },
@@ -66,38 +66,40 @@ function Registro() {
               <input type="email" className="input-arcade" id="correo" />
             </div>
 
-            {/* Fecha y Usuario */}
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="fecha">Fecha de Nacimiento</label>
-                <input type="date" className="input-arcade" id="fecha" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="usuario">Usuario</label>
-                <input type="text" className="input-arcade" id="usuario" />
-              </div>
+                  <label htmlFor="nombreCompleto">Nombre Completo</label>
+                  <input type="text" className="input-arcade" id="nombreCompleto" />
+                </div>
             </div>
 
+            {/* Nombre Completo y Usuario */}
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="usuario">Usuario</label>
+              <input type="text" className="input-arcade" id="usuario" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="edad">Edad</label>
+              <input type="number" className="input-arcade" id="edad" min="1" max="100"/>
+            </div>
+          </div>
+           
             {/* Contraseña y Confirmar */}
-            <div className="from-row">
-              <div className="form-group">
-                <label htmlFor="contrasena">Contraseña</label>
-                <input
-                  type="password"
-                  className="input-arcade"
-                  id="contrasena"
-                />
-              </div>
-              <div className="form-group" style={{ flex: 1 }}>
-                <label htmlFor="confirmar">Confirmar contraseña</label>
-                <input
-                  type="password"
-                  className="input-arcade"
-                  id="confirmar"
-                />
+            <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="contrasena">Contraseña</label>
+                  <input type="password" className="input-arcade" id="contrasena" />
+                </div>
+                <div className="form-row">
+                  <div className="form-group" style={{ flex: 1 }}>
+                    <label htmlFor="confirmar">Confirmar contraseña</label>
+                    <input type="password" className="input-arcade" id="confirmar"/>
+                  </div>
               </div>
             </div>
-
+            
+  
             {/* Términos */}
             <div className="form-check mb-3">
               <input
