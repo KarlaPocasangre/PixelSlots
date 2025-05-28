@@ -6,7 +6,7 @@ import EmojiGafas from "../assets/img/gafas-de-sol.png";
 import EmojiFiesta from "../assets/img/fiesta.png";
 import EmojiImpactado from "../assets/img/conmocionado.png";
 import EmojiEstrellado from "../assets/img/estrellado.png";
-import Tutorial from "../assets/img/Maquina.png";
+import Tutorial from "../assets/img/Maquina-Arcade.png";
 import palanca from "../assets/img/Palanca.gif";
 
 export const showMustLoginAlert = () => {
@@ -256,9 +256,6 @@ export const showCreditsAlert = () => {
         Fondos diseñados por <a href="https://www.instagram.com/isai_sketches/" target="_blank" title="Isai Oviedo Instagram">Isai Oviedo</a> para el MMO <a href="https://bitmates.io" target="_blank" title="Bitmates">bitmates.io</a>.<br>
         Sitio web del autor: <a href="https://isai.shop/" target="_blank" title="Sitio web de Isai">https://isai.shop/</a><br>
         Galería de imágenes utilizadas: <a href="https://isai.shop/PIXEL-ART" target="_blank" title="Galería Pixel Art">https://isai.shop/PIXEL-ART</a><br><br>
-
-        Ilustración de máquina de juegos (apartado Game) diseñada e ilustrada por: <a href="https://www.behance.net/pixeljeff" target="_blank" title="Pixel Jeff">Pixel Jeff</a><br><br>
-
          <b>📸Imágenes:</b><br>
         Imagenes usadas de Flaticon: <br>
         <a href="https://www.flaticon.es/iconos-gratis/pixel" target="_blank" title="Pixel iconos">Pixel iconos creados por j8chi - Flaticon</a><br>
@@ -507,11 +504,11 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
     title: "Confirmación requerida",
     html: `
       <div style="text-align:left; font-size:15px; padding-left:5px;">
-        <label><input type="checkbox" name="todo" /> Acepto todo lo que se muestra a continuación</label><br/><br/>
+        <label><input type="checkbox" name="todo" /> He leido y acepto todo lo que se indica a continuación</label><br/><br/>
         <label><input type="checkbox" name="mayor" /> Soy mayor de 18 años</label><br/><br/>
         <label>
           <input type="checkbox" name="terminos" />
-          He leído los <span id="ver-terminos" style="color:#7b2cbf; text-decoration: underline; cursor: pointer;">términos y condiciones</span>
+          He leído y acepto los <span id="ver-terminos" style="color:#7b2cbf; text-decoration: none; cursor: pointer;">Términos y condiciones</span>
         </label>
       </div>
     `,

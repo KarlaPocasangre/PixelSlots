@@ -16,6 +16,7 @@ html {
   letter-spacing: 1px;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   height: 100%;
 }
 

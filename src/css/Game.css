@@ -1,147 +1,106 @@
-/* === Vista General === */
-.game-viewport {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.background {
-  width: 100%;
-  min-height: 100dvh;
-  background: center / cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-}
-
-/* === Contenido principal === */
-.content {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  width: 100%;
-  gap: 2rem;
-}
-
-/* === Máquina y Palanca === */
-.machine-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.game-container {
   flex: 1;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/img/Fondo-maquinas.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.machine {
-  max-width: 500px;
+.machine-wrapper {
+  width: 80%;
+  max-width: 410px;
+  position: relative;
+  z-index: 1;
+}
+
+.machine-relative {
+  position: relative;
+  width: 100%;
+}
+
+/* Máquina se escala con pantalla */
+.game-maquina {
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.maquina-ajustada {
-  margin-left: 200px;
-}
-
-/* Palanca */
+/* Palanca sigue proporcional a la máquina */
 .palanca {
   position: absolute;
-  top: 380px;
-  left: 350px;
-  width: 100px;
+  bottom: 11%;
+  left: 5%;
+  width: 35%;
   height: auto;
-  z-index: 10;
+  z-index: 2;
+  cursor: pointer;
 }
 
-/* === Panel de Información === */
-.info-panel {
+.texto-comenzar {
+  position: absolute;
+  top: 43%;
+  left: 51%;
+  letter-spacing: 7px;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: #ffffff;
+  z-index: 2;
+  user-select: none;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Aca abajo estilos de puntos y fichas*/
+
+.hud-panel {
+  position: absolute;
+  top: 80px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 8px;
+  z-index: 3;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #000;
 }
 
-.info-box {
-  background-color: #170234e0;
-  color: white;
-  border: 2px solid #ffffffaa;
-  border-radius: 10px;
-  padding: 10px 20px;
+/* Ahora cada caja se ve como una tarjeta individual */
+.hud-item {
   display: flex;
   align-items: center;
-  font-family: monospace;
-  box-shadow: 0 0 6px #00000066;
+  gap: 8px;
+  background-color: rgba(23, 2, 52, 0.8); /* 60% opacidad */
+  box-shadow: #ffffff 0px 0px 1px;
+  border: 1px solid #ffd700;
+  border-radius: 4px;
+  padding: 8px 12px;
+  min-width: 130px;
+  justify-content: space-between;
 }
 
-.icono {
-  width: 28px;
-  height: 28px;
-  margin-right: 10px;
+.hud-icon {
+  width: 30px;
+  height: auto;
 }
 
-.valor {
-  color: gold;
-  font-weight: bold;
+.hud-label {
+  color: #ffffff;
 }
 
-/* === Slot Machine === */
-.slot-display {
-  position: absolute;
-  top: 147px;
-  left: 62%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 13px;
-  z-index: 5;
-  padding: 67px 4px;
-}
-
-.slot-image {
-  width: 70px;
-  height: 90px;
-  image-rendering: pixelated;
-  background-color: white;
-  padding: 8px;
-  border-radius: 6px;
-}
-
-/* === Responsive: Móvil === */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .info-panel {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .maquina-ajustada {
-    margin-left: 0;
-  }
-
-  .palanca {
-    top: 260px;
-    left: 90px;
-    width: 90px;
-    transform: translateX(-50%);
-  }
-
-  .slot-display {
-    top: 140px;
-    left: 49%;
-    gap: 10px;
-    padding: 20px 10px;
-  }
-
-  .slot-image {
-    width: 50px;
-    height: 60px;
-    padding: 5px;
-  }
+.hud-value {
+  color: #ffd700;
 }

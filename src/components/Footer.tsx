@@ -6,7 +6,7 @@ import "../css/Footer.css";
 
 function Footer() {
   return (
-    <footer className="py-1 mt-auto">
+    <footer className="mt-auto">
       <div className="container text-center">
         <p className="mb-2">
           © 2025 PixelSlots. Todos los derechos reservados.
