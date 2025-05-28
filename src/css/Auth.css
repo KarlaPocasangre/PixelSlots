@@ -76,12 +76,18 @@
   padding: 10px 15px;
   display: block;
   box-sizing: border-box;
+  
 }
 .input-arcade:focus {
   outline: none;
   border-color: #e53cff;
   box-shadow: 0 0 5px #e53cff;
 }
+.input-arcade:hover {
+  border-color: #e53cff;
+  box-shadow: 0 0 5px #e53cff;
+}
+
 
 .auth-btn {
   font-size: 30px;
