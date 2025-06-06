@@ -194,7 +194,7 @@ export const showcontactAlert = () => {
         <b>✈️🌐Dirección</b><br><br>
         Universidad de Sonsonate<br><br>
         <b> 📬 💌Correo</b><br><br>
-        Escribemos en nuestro correo: <a href="*" target="_blank" title="Correo">pixelslots@dominio.com.sv</a><br><br>
+        Escribinos en nuestro correo: <a href="mailto:pixelslots.support@pixelslotsgame.com" target="_blank" title="Correo">pixelslots.support@pixelslotsgame.com</a><br><br>
         <div style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
           ¡Siempre disponibles!
         </div>
