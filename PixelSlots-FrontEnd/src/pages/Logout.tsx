@@ -1,21 +1,28 @@
+// Importa estilos y herramientas de navegacion
 import "../css/Auth.css";
 import fondocalle from "../assets/img/Fondo-calle-Arcade.gif";
 import { Link, useNavigate } from "react-router-dom";
+
+// Importa funciones de alerta personalizadas
 import {
   showTermsAlert,
   showLogoutAlert,
   showConnectionErrorAlert,
   showRegisterErrorAlert,
 } from "../utils/alerts";
+
 import { useState } from "react";
 
 function Registro() {
+  // Estado para manejar errores de validacion del formulario
   const [errores, setErrores] = useState<{ [key: string]: string }>({});
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Para redirigir al login luego del registro
 
+  // Funcion que se ejecuta al enviar el formulario
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // Evita recarga de la pagina
 
+    // Obtener valores de los campos del formulario
     const nombreInput = document.getElementById("nombre") as HTMLInputElement;
     const usuarioInput = document.getElementById("usuario") as HTMLInputElement;
     const correoInput = document.getElementById("correo") as HTMLInputElement;
@@ -30,8 +37,10 @@ function Registro() {
       "terminosCheck"
     ) as HTMLInputElement;
 
+    // Objeto para recolectar errores de validacion
     let erroresForm: { [key: string]: string } = {};
 
+    // Validaciones simples para campos vacios, edad y confirmacion de contraseña
     if (!nombreInput.value.trim())
       erroresForm.nombre = "*Este campo es obligatorio";
     if (!usuarioInput.value.trim())
@@ -45,10 +54,11 @@ function Registro() {
     if (contrasenaInput.value !== confirmarInput.value)
       erroresForm.confirmar = "*Las contraseñas no coinciden";
     if (!terminosCheck.checked)
-      erroresForm.terminos = "*Aceptar los términos es obligatorio";
+      erroresForm.terminos = "*Aceptar los terminos es obligatorio";
 
-    setErrores(erroresForm);
+    setErrores(erroresForm); // Muestra los errores
 
+    // Si no hay errores, envia los datos al servidor
     if (Object.keys(erroresForm).length === 0) {
       try {
         const response = await fetch(
@@ -70,22 +80,24 @@ function Registro() {
 
         const data = await response.json();
 
+        // Manejo de errores desde el servidor
         if (!response.ok) {
           if (data.error?.toLowerCase().includes("correo")) {
             setErrores({ correo: data.error });
           } else if (data.error) {
             setErrores({ general: data.error });
           } else {
-            showRegisterErrorAlert();
+            showRegisterErrorAlert(); // Alerta generica si no hay error especifico
           }
           return;
         }
 
+        // Si el registro es exitoso, muestra mensaje y redirige al login
         await showLogoutAlert();
         navigate("/login");
       } catch (error) {
         console.error("Error en registro:", error);
-        showConnectionErrorAlert();
+        showConnectionErrorAlert(); // Alerta si falla la conexion
       }
     }
   };
@@ -99,7 +111,9 @@ function Registro() {
         <div className="registro-contenido mx-auto">
           <h2 className="titulo-Auth text-center mb-3">REGISTRO</h2>
 
+          {/* Formulario de registro */}
           <form onSubmit={handleSubmit}>
+            {/* Campo: Correo */}
             <div className="mb-3">
               <label htmlFor="correo">Correo</label>
               <input type="email" className="input-arcade" id="correo" />
@@ -108,6 +122,7 @@ function Registro() {
               )}
             </div>
 
+            {/* Campo: Nombre completo */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="nombre">Nombre Completo</label>
@@ -118,6 +133,7 @@ function Registro() {
               </div>
             </div>
 
+            {/* Campo: Usuario y Edad */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="usuario">Usuario</label>
@@ -141,6 +157,7 @@ function Registro() {
               </div>
             </div>
 
+            {/* Campo: Contraseña y Confirmar */}
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="contrasena">Contraseña</label>
@@ -166,6 +183,7 @@ function Registro() {
               </div>
             </div>
 
+            {/* Checkbox de terminos y condiciones */}
             <div className="form-check mb-3">
               <input
                 type="checkbox"
@@ -180,7 +198,7 @@ function Registro() {
                   role="button"
                   tabIndex={0}
                 >
-                  Términos y Condiciones
+                  Terminos y Condiciones
                 </span>
               </label>
               {errores.terminos && (
@@ -188,6 +206,7 @@ function Registro() {
               )}
             </div>
 
+            {/* Boton de envio */}
             <div className="text-center mb-3">
               <button type="submit" className="auth-btn">
                 REGISTRARSE
@@ -198,10 +217,11 @@ function Registro() {
             </div>
           </form>
 
+          {/* Enlace para ir al login si ya tiene cuenta */}
           <p className="text-center mt-3">
             Ya tienes cuenta?{" "}
             <Link to="/login" className="link-auth">
-              Inicia Sesión!
+              Inicia Sesion!
             </Link>
           </p>
         </div>
