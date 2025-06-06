@@ -90,7 +90,6 @@ exports.login = async (req, res) => {
   }
 };
 
-// authController.js o puntajeController.js (según tu estructura)
 exports.actualizarPuntaje = async (req, res) => {
   try {
     const { puntaje } = req.body;
@@ -105,7 +104,7 @@ exports.actualizarPuntaje = async (req, res) => {
     score.puntaje += puntaje;
     await score.save();
 
-    // 🔧 Aquí agregamos el update de las fichas
+    // Update de las fichas
     const user = await User.findByPk(userId);
     if (!user || user.fichas <= 0) {
       return res.status(400).json({ error: "No tienes fichas suficientes" });

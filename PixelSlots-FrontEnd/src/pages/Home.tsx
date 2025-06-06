@@ -17,7 +17,7 @@ function Home() {
   const handleAnimation = (ref: any) => {
     if (ref.current) {
       ref.current.classList.remove("animate__animated", "animate__rubberBand");
-      void ref.current.offsetWidth; // Reinicia la animación
+      void ref.current.offsetWidth;
       ref.current.classList.add("animate__animated", "animate__rubberBand");
     }
   };

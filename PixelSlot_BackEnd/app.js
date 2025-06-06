@@ -9,18 +9,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const authRoutes = require("./routes/authRoutes"); // importar rutas
+const authRoutes = require("./routes/authRoutes");
 
-app.use("/api", authRoutes); // montar en /api
+app.use("/api", authRoutes);
 
-const scoreRoutes = require("./routes/puntajeRoutes"); // si lo creaste así
+const scoreRoutes = require("./routes/puntajeRoutes");
 app.use("/api", scoreRoutes);
 
 const rankingRoutes = require("./routes/rankingRoutes");
 app.use("/api", rankingRoutes);
-
-//prueba de conexion
-//conexion a la base de datos
 
 sequelize
   .authenticate()

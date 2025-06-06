@@ -13,7 +13,7 @@ import Logout from "../pages/Logout";
 import Loading from "../pages/Loading";
 import NotFound from "../errors/NotFound";
 
-import PrivateRoute from "./privateRoute"; // 👈 Importar aquí
+import PrivateRoute from "./privateRoute";
 
 const Routes: RouteObject[] = [
   {

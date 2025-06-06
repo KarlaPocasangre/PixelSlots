@@ -45,7 +45,6 @@ function Game() {
   const [mostrarTexto, setMostrarTexto] = useState(true);
   const [mostrarCombinacion, setMostrarCombinacion] = useState(false);
 
-  // ✅ SLOT STATES ACTUALIZADOS
   const [slot1, setSlot1] = useState(simbolos[0].imagen);
   const [slot2, setSlot2] = useState(simbolos[1].imagen);
   const [slot3, setSlot3] = useState(simbolos[2].imagen);
@@ -71,7 +70,7 @@ function Game() {
     if (fichasGuardadas) setFichas(parseInt(fichasGuardadas));
 
     if (token) {
-      fetch("http://localhost:3000/api/puntaje-total", {
+      fetch("https://pixelslotsgame.com/api/puntaje-total", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -167,7 +166,7 @@ function Game() {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch("http://localhost:3000/api/jugar", {
+        const res = await fetch("https://pixelslotsgame.com/api/jugar", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -185,10 +184,10 @@ function Game() {
             audioVictoria.currentTime = 0;
             audioVictoria.play();
             lanzarConfetiIntenso();
-            showTripleComboAlert(data.puntajeGanado); // 🎉 Alerta de 3 iguales x2
+            showTripleComboAlert(data.puntajeGanado);
           } else if (data.puntajeGanado > 0) {
             lanzarConfetiSimple();
-            showPuntosGanadosAlert(data.puntajeGanado); // 🟨 Alerta de 2 iguales
+            showPuntosGanadosAlert(data.puntajeGanado);
           }
 
           setFichas(data.fichasRestantes);
@@ -196,7 +195,7 @@ function Game() {
           localStorage.setItem("fichas", data.fichasRestantes.toString());
 
           if (data.puntajeGanado === 0) {
-            showPuntos0Alert(); // 🔴 Alerta de 0 puntos
+            showPuntos0Alert();
           }
         } else {
           alert(data.error || "Error al procesar el juego.");

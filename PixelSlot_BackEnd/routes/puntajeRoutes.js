@@ -61,9 +61,9 @@ router.get("/puntaje-total", verifyToken, async (req, res) => {
   }
 });
 
-// NUEVA RUTA: lógica de juego completa
+// Logica de juego completa
 router.post("/jugar", verifyToken, async (req, res) => {
-  const { simbolos } = req.body; // Ej: ['audifono', 'audifono', 'audifono']
+  const { simbolos } = req.body;
   const userId = req.user.id;
 
   const BONOS = {

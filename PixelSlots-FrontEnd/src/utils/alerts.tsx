@@ -11,8 +11,7 @@ import Tutorial from "../assets/img/Tutorial.gif";
 import triste from "../assets/img/Tristeza.gif";
 import Alerta from "../assets/img/AlertaSinFichas.png";
 
-//Alerta de tutorial HOME
-
+// Game y Home: Tutorial
 export const showTutorialAlert = () => {
   Swal.fire({
     title: "Tutorial",
@@ -78,8 +77,7 @@ export const showTutorialAlert = () => {
   });
 };
 
-//Alertas de Terminos y condiciones, sobre nosotros, contacto y atribuciones
-
+// Footer : Terminos y condiciones, Sobre nosotros, Atribuciones, Contacto
 export const showTermsAlert = () => {
   Swal.fire({
     title: "Términos y Condiciones",
@@ -305,7 +303,7 @@ export const showCreditsAlert = () => {
   });
 };
 
-//Alertas de fichas ganadas GAME
+// Game: Alertas de puntos Obtenidos
 
 export const showGameAlert = () => {
   Swal.fire({
@@ -330,8 +328,6 @@ export const showGameAlert = () => {
     scrollbarPadding: false,
   });
 };
-
-//Alertas de puntos ganados GAME
 
 export const showPuntosGanadosAlert = (puntos: number) => {
   Swal.fire({
@@ -408,7 +404,7 @@ export const showPuntos0Alert = () => {
   });
 };
 
-//Inicio Sesion Alertas
+// Auth: Alertas de bienvenida y de consentimiento
 
 export const showLoginAlert = () => {
   Swal.fire({
@@ -436,7 +432,6 @@ export const showLogoutAlert = () => {
   });
 };
 
-//Registro Alertas
 export const showRegisterAlert = () => {
   Swal.fire({
     position: "top-end",
@@ -447,23 +442,6 @@ export const showRegisterAlert = () => {
     imageAlt: "Personaje Pixel Art",
     showConfirmButton: false,
     timer: 800,
-  });
-};
-
-export const showGameOver = () => {
-  Swal.fire({
-    imageUrl: triste,
-    imageWidth: 100,
-    imageAlt: "emoji triste",
-    title: "¡Sin fichas!",
-    text: "No tienes fichas disponibles para jugar.",
-    confirmButtonText: "Aceptar",
-    showClass: {
-      popup: "animate__animated animate__tada animate__faster",
-    },
-    hideClass: {
-      popup: "animate__animated animate__fadeOutUp",
-    },
   });
 };
 
@@ -478,7 +456,6 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
     const target = e.target as HTMLInputElement;
     checks = { ...checks, [target.name]: target.checked };
 
-    // Si marca "todo", marca los otros
     if (target.name === "todo" && target.checked) {
       checks.mayor = true;
       checks.terminos = true;
@@ -490,7 +467,6 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
       )!.checked = true;
     }
 
-    // Si desmarca "todo", desmarca los otros
     if (target.name === "todo" && !target.checked) {
       checks.mayor = false;
       checks.terminos = false;
@@ -508,7 +484,7 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
     html: `
       <div style="text-align:left; font-size:15px; padding-left:5px;">
         <label><input type="checkbox" name="todo" /> He leido y acepto todo lo que se indica a continuación</label><br/><br/>
-        <label><input type="checkbox" name="mayor" /> Soy mayor de 18 años</label><br/><br/>
+        <label><input type="checkbox" name="mayor" /> Tengo 18 años o mas</label><br/><br/>
         <label>
           <input type="checkbox" name="terminos" />
           He leído y acepto los <span id="ver-terminos" style="color:#7b2cbf; text-decoration: none; cursor: pointer;">Términos y condiciones</span>
@@ -528,13 +504,11 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
       }
     },
     didOpen: () => {
-      // Agregar listeners a checkboxes
       const container = Swal.getHtmlContainer();
       container?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
         input.addEventListener("change", handleChange);
       });
 
-      // Agregar listener al enlace de términos
       const verTerminos = document.getElementById("ver-terminos");
       if (verTerminos) {
         verTerminos.addEventListener("click", (e) => {
@@ -556,7 +530,26 @@ export const showConsentAlert = (navigate: (path: string) => void) => {
   });
 };
 
-// Errores del servidor y inicio de sesion
+// Game: Fichas insuficientes
+export const showGameOver = () => {
+  Swal.fire({
+    imageUrl: triste,
+    imageWidth: 100,
+    imageAlt: "emoji triste",
+    title: "¡Sin fichas!",
+    text: "No tienes fichas disponibles para jugar.",
+    confirmButtonText: "Aceptar",
+    showClass: {
+      popup: "animate__animated animate__tada animate__faster",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+};
+
+// Errores
+
 export const showConnectionErrorAlert = () => {
   Swal.fire({
     icon: "error",

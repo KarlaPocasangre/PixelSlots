@@ -15,7 +15,7 @@ router.get("/ranking", async (req, res) => {
     });
 
     const resultados = ranking.map((item) => ({
-      usuario: item.usuario.usuario, // ✅ clave corregida
+      usuario: item.usuario.usuario,
       puntaje: item.puntaje,
       fichas: item.usuario.fichas,
     }));

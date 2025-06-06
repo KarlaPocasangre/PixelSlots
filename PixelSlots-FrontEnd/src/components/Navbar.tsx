@@ -12,48 +12,46 @@ function Navbar() {
   });
 
   const showLogoutAlert = () => {
-  Swal.fire({
-    title: "Cerrar sesión",
-    text: "¿Estás seguro de que quieres cerrar sesión?",
-    imageUrl: sorpresa,
-    imageWidth: 140,
-    imageHeight: 140,
-    imageAlt: "emoji sorprendido",
-    showCancelButton: true,
-    confirmButtonText: "Sí, cerrar sesión",
-    cancelButtonText: "Cancelar",
-    didOpen: () => {
-      const img = document.querySelector(".swal2-image");
-      if (img) {
-        img.classList.add(
-          "animate__animated",
-          "animate__tada",
-          "animate__infinite"
-        );
+    Swal.fire({
+      title: "Cerrar sesión",
+      text: "¿Estás seguro de que quieres cerrar sesión?",
+      imageUrl: sorpresa,
+      imageWidth: 140,
+      imageHeight: 140,
+      imageAlt: "emoji sorprendido",
+      showCancelButton: true,
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+      didOpen: () => {
+        const img = document.querySelector(".swal2-image");
+        if (img) {
+          img.classList.add(
+            "animate__animated",
+            "animate__tada",
+            "animate__infinite"
+          );
+        }
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("fichas");
+        localStorage.removeItem("userId");
+
+        Swal.fire({
+          title: "Sesión cerrada",
+          text: "Has cerrado sesión exitosamente.",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+          didClose: () => {
+            navigate("/login");
+          },
+        });
       }
-    },
-  }).then((result) => {
-    if (result.isConfirmed) {
-      // 🔐 Limpiar el localStorage antes de redirigir
-      localStorage.removeItem("token");
-      localStorage.removeItem("usuario");
-      localStorage.removeItem("fichas");
-      localStorage.removeItem("userId");
-
-      Swal.fire({
-        title: "Sesión cerrada",
-        text: "Has cerrado sesión exitosamente.",
-        icon: "success",
-        timer: 1500,
-        showConfirmButton: false,
-        didClose: () => {
-          navigate("/login");
-        },
-      });
-    }
-  });
-};
-
+    });
+  };
 
   const [usuario, setUsuario] = useState("");
 
@@ -124,7 +122,9 @@ function Navbar() {
                   <i className="bi bi-person-fill"></i>
                 </a>
                 <ul className="dropdown-menu dropdown-menu-end user-menu animate__animated animate__fadeInDown p-3">
-                  <li className="user-name mb-2">{usuario ?? "Cargando..."} 🎮</li>
+                  <li className="user-name mb-2">
+                    {usuario ?? "Cargando..."} 🎮
+                  </li>
                   <div className="divider"></div>
                   <li>
                     <button

@@ -1,0 +1,22 @@
+Credenciales:
+
+Link de GitHub: https://github.com/KarlaPocasangre/PixelSlots
+
+CPanel:
+Usuario: pixelslots
+Contraseña: Kaxierjo9812@
+
+WHM:
+Usuario: root
+Contraseña: Kaxierjo9812@
+
+Base de Datos:
+DB:pixelcasino
+Usuario:pixelusuario
+Contraseña: Kaxierjo9812
+
+IP del VPS: 145.79.0.236
+
+Contraseña ssh: Kaxierjo9812@
+
+Dominio: www.pixelslotsgame.com

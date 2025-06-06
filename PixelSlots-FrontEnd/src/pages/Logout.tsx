@@ -51,19 +51,22 @@ function Registro() {
 
     if (Object.keys(erroresForm).length === 0) {
       try {
-        const response = await fetch("http://localhost:3000/api/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nombre: nombreInput.value,
-            usuario: usuarioInput.value,
-            email: correoInput.value,
-            edad: parseInt(edadInput.value),
-            pass: contrasenaInput.value,
-          }),
-        });
+        const response = await fetch(
+          "https://pixelslotsgame.com/api/register",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              nombre: nombreInput.value,
+              usuario: usuarioInput.value,
+              email: correoInput.value,
+              edad: parseInt(edadInput.value),
+              pass: contrasenaInput.value,
+            }),
+          }
+        );
 
         const data = await response.json();
 
@@ -73,16 +76,16 @@ function Registro() {
           } else if (data.error) {
             setErrores({ general: data.error });
           } else {
-            showRegisterErrorAlert(); // ✅ Alerta visual si no hay mensaje
+            showRegisterErrorAlert();
           }
           return;
         }
 
-        await showLogoutAlert(); // ✅ Registro exitoso
+        await showLogoutAlert();
         navigate("/login");
       } catch (error) {
         console.error("Error en registro:", error);
-        showConnectionErrorAlert(); // ❌ Error de red
+        showConnectionErrorAlert();
       }
     }
   };

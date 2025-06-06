@@ -43,7 +43,7 @@ function Login() {
 
     if (Object.keys(erroresForm).length === 0) {
       try {
-        const response = await fetch("http://localhost:3000/api/login", {
+        const response = await fetch("https://pixelslotsgame.com/api/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -67,9 +67,8 @@ function Login() {
           return;
         }
 
-        // Guardar datos y mostrar alertas
         localStorage.setItem("token", data.token);
-        localStorage.setItem("usuarioId", data.userId); // ✅ Esta línea es nueva
+        localStorage.setItem("usuarioId", data.userId);
         localStorage.setItem("fichas", data.fichas);
         localStorage.setItem("usuario", data.usuario);
 

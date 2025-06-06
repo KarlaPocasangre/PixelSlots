@@ -4,7 +4,7 @@ import "../css/Ranking.css";
 interface UsuarioRanking {
   usuario: string;
   puntaje: number;
-  fichas?: number; // opcional por si en el backend no viene
+  fichas?: number;
 }
 
 const Ranking = () => {
@@ -13,7 +13,7 @@ const Ranking = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/ranking")
+    fetch("https://pixelslotsgame.com/api/ranking")
       .then((res) => {
         if (!res.ok) throw new Error("Error al obtener el ranking.");
         return res.json();

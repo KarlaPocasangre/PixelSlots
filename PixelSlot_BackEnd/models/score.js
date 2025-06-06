@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("./bd");
-const User = require("./user"); // ✅ importar el modelo relacionado
+const User = require("./user"); //
 
 const Score = sequelize.define(
   "puntaje",
@@ -25,10 +25,9 @@ const Score = sequelize.define(
   }
 );
 
-// ✅ declarar la relación antes de exportar
 Score.belongsTo(User, {
   foreignKey: "id_usuario",
-  as: "usuario", // importante para usar item.usuario.usuario
+  as: "usuario",
 });
 
 module.exports = Score;
