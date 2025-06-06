@@ -84,30 +84,60 @@ export const showTermsAlert = () => {
   Swal.fire({
     title: "Términos y Condiciones",
     html: `
-      <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
-        <b>TÉRMINOS Y CONDICIONES DE PIXEL SLOTS</b><br><br>
+      <div style="text-align: left; font-size: 14px; max-height: 400px; overflow-y: auto; padding-right: 10px; line-height: 1.6;">
+        <p><strong style="font-size: 15px;">TÉRMINOS Y CONDICIONES DE PIXEL SLOTS</strong></p>
+        <p>Bienvenido a <strong>PixelSlots</strong>, una experiencia de entretenimiento digital diseñada exclusivamente para disfrutar de un emocionante juego de tragamonedas en línea. Al registrarse, usted declara haber leído, comprendido y aceptado estos términos en su totalidad.</p>
 
-        <b>1. Creación de Cuenta:</b><br>
-        1.1. Para acceder a nuestros servicios, será necesario que cree una cuenta de usuario, proporcionando sus datos de manera correcta y veraz durante el proceso de registro.<br><br>
-        1.2. Es requisito que el usuario disponga de una dirección de correo electrónico válida y activa para completar el registro. La dirección de correo proporcionada será utilizada para la comunicación con el usuario y para la verificación de la cuenta. El usuario se compromete a mantener actualizada dicha dirección de correo electrónico para asegurar una correcta comunicación.<br><br>
+        <p><strong style="color:rgb(129, 49, 104);">1. Creación de Cuenta</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>1.1 Para acceder a nuestros servicios, deberá crear una cuenta de usuario proporcionando información veraz.</li>
+          <li>1.2 Es obligatorio proporcionar un correo electrónico válido y mantenerlo actualizado para la comunicación y verificación.</li>
+        </ul>
 
-        <b>2. Edad Mínima:</b><br>
-        2.1. Al acceder a nuestra plataforma, usted asegura y declara que tiene la edad legal necesaria en su país o región para participar en actividades de juego en línea. En el caso de El Salvador, la legislación establece que la edad mínima para participar en juegos de azar, incluyendo casinos, apuestas deportivas y loterías, es de dieciocho (18) años.<br><br>
-        2.2. Pixel Slots no asume responsabilidad alguna por el acceso o uso no autorizado de la plataforma por parte de personas que no cumplan con la edad mínima legal requerida. En caso de detectarse dicha situación, la cuenta será bloqueada de forma inmediata y el usuario perderá automáticamente cualquier derecho sobre los puntos o premios acumulados.<br><br>
+        <p><strong style="color: rgb(129, 49, 104);">2. Edad Mínima</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>2.1 Usted asegura que tiene al menos 18 años. En El Salvador, la edad mínima legal es 18 años.</li>
+          <li>2.2 PixelSlots no se hace responsable por el uso de menores; cuentas de usuarios menores serán eliminadas.</li>
+        </ul>
 
-        <b>3. Responsabilidad del Usuario:</b><br>
-        3.1. Usted como usuario es el único responsable de preservar la confidencialidad de las credenciales de su cuenta, así como de todas las acciones o actividades que se realicen a través de la misma.<br><br>
-        3.2. Queda prohibido compartir sus credenciales de inicio de sesión con terceros. Cualquier acción que se realice desde su cuenta será considerada exclusivamente su responsabilidad.<br><br>
+        <p><strong style="color: rgb(129, 49, 104);">3. Responsabilidad del Usuario</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>3.1 Usted es responsable de proteger sus credenciales de acceso.</li>
+          <li>3.2 No debe compartir su cuenta. Toda acción desde su cuenta es su responsabilidad.</li>
+        </ul>
 
-        <b>4. Modificaciones y Actualizaciones:</b><br>
-        4.1. Pixel Slots se reserva el derecho de modificar o actualizar los presentes términos y condiciones en cualquier momento, sin necesidad de previo aviso. Cualquier cambio será notificado al usuario a través de los medios de contacto proporcionados durante el registro. La fecha de última actualización de los términos estará visible en esta página.<br><br>
-        Al aceptar estos términos y condiciones, usted reconoce y acepta que es su responsabilidad revisar periódicamente esta página con el fin de mantenerse informado sobre cualquier modificación que pueda realizarse. El uso continuado de nuestros servicios tras la publicación de dichos cambios implicará su aceptación plena y tácita de los mismos.<br><br>
+        <p><strong style="color:rgb(129, 49, 104);">4. Modificaciones y Actualizaciones</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>4.1 PixelSlots puede modificar estos términos sin previo aviso.</li>
+          <li>4.2 Los cambios se notificarán al correo registrado. El uso continuado implica aceptación automática de los nuevos términos.</li>
+        </ul>
 
-        <b>5. Uso de la Plataforma:</b><br>
-        5.1. El usuario se compromete a utilizar Pixel Slots únicamente con fines recreativos y de entretenimiento personal, absteniéndose de emplear la plataforma con fines fraudulentos, comerciales o cualquier otro uso no autorizado.<br><br>
+        <p><strong style="color:rgb(129, 49, 104);">5. Uso de la Plataforma</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>5.1 El usuario solo podrá utilizar PixelSlots con fines recreativos y personales.</li>
+          <li>5.2 Cualquier uso con fines fraudulentos, comerciales o indebidos está estrictamente prohibido.</li>
+        </ul>
 
-        <div style="text-align: center; font-size: 12px; color: gray; margin-top: 10px;">
-          Última actualización: Abril 26, 2025
+        <p><strong style="color: rgb(129, 49, 104);">6. Renuncia de Responsabilidad</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>6.1 PixelSlots no se responsabiliza por pérdidas de puntos, interrupciones, fallos técnicos ni pérdida de datos personales.</li>
+          <li>6.2 El uso de la plataforma es bajo su propio riesgo. Al aceptar los términos, usted exonera a PixelSlots de reclamaciones legales relacionadas.</li>
+        </ul>
+
+        <p><strong style="color: rgb(129, 49, 104);">7. Premio Especial de Feria</strong></p>
+        <ul style="padding-left: 20px;">
+          <li>7.1 Se entregarán premios simbólicos a los tres usuarios con mayor puntaje al final del evento:</li>
+          <ul style="padding-left: 20px;">
+            <li><strong>1er lugar:</strong> premio simbólico especial</li>
+            <li><strong>2do lugar:</strong> premio simbólico especial</li>
+            <li><strong>3er lugar:</strong> premio simbólico especial</li>
+          </ul>
+          <li>7.2 Ganadores serán anunciados en la Universidad de Sonsonate y notificados por correo.</li>
+          <li>7.3 Correos inválidos anulan el derecho al premio. Conductas fraudulentas serán descalificadas automáticamente.</li>
+        </ul>
+
+        <div style="text-align: center; font-size: 12px; color: gray; margin-top: 15px;">
+          Última actualización: Junio 2025
         </div>
       </div>
     `,
