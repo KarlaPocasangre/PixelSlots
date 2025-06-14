@@ -58,7 +58,7 @@ function Login() {
     // Si no hay errores, se envia la solicitud al servidor
     if (Object.keys(erroresForm).length === 0) {
       try {
-        const response = await fetch("https://pixelslotsgame.com/api/login", {
+        const response = await fetch("http://localhost:3000/api/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

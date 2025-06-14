@@ -21,7 +21,7 @@ const Ranking = () => {
 
   // Hook que se ejecuta al cargar el componente
   useEffect(() => {
-    fetch("https://pixelslotsgame.com/api/ranking")
+    fetch("http://localhost:3000/api/ranking")
       .then((res) => {
         // Verifica si la respuesta del servidor fue exitosa
         if (!res.ok) throw new Error("Error al obtener el ranking.");

@@ -86,7 +86,7 @@ function Game() {
     if (fichasGuardadas) setFichas(parseInt(fichasGuardadas));
 
     if (token) {
-      fetch("https://pixelslotsgame.com/api/puntaje-total", {
+      fetch("http://localhost:3000/api/puntaje-total", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -193,7 +193,7 @@ function Game() {
         const token = localStorage.getItem("token");
 
         // Envia la jugada al servidor para evaluar el puntaje
-        const res = await fetch("https://pixelslotsgame.com/api/jugar", {
+        const res = await fetch("http://localhost:3000/api/jugar", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

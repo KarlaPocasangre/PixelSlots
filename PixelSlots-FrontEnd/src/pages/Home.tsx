@@ -59,7 +59,7 @@ function Home() {
         <p className="text-home">
           Pon a prueba tu suerte en este emocionante juego de tragamonedas
           estilo retro. Gira los carretes, consigue combinaciones ganadoras y
-          alcanza la mejor puntuación!
+          alcanza la mejor puntuación! Marlen.
         </p>
 
         {/* Emoji decorativo con animación al pasar el mouse */}

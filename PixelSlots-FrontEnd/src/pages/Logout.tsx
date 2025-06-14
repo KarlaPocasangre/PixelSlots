@@ -61,22 +61,19 @@ function Registro() {
     // Si no hay errores, envia los datos al servidor
     if (Object.keys(erroresForm).length === 0) {
       try {
-        const response = await fetch(
-          "https://pixelslotsgame.com/api/register",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              nombre: nombreInput.value,
-              usuario: usuarioInput.value,
-              email: correoInput.value,
-              edad: parseInt(edadInput.value),
-              pass: contrasenaInput.value,
-            }),
-          }
-        );
+        const response = await fetch("http://localhost:3000/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: nombreInput.value,
+            usuario: usuarioInput.value,
+            email: correoInput.value,
+            edad: parseInt(edadInput.value),
+            pass: contrasenaInput.value,
+          }),
+        });
 
         const data = await response.json();
 
